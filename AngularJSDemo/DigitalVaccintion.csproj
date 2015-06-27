@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46229EA2-9565-4369-B7EF-7EDC2F48B42F}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AngularJSDemo</RootNamespace>
+    <AssemblyName>AngularJSDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Shell32">
+      <HintPath>..\..\..\..\..\tika_app\ManiacProject\ManiacProject\bin\Interop.Shell32.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Exchange.WebServices">
+      <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\Microsoft.Exchange.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySqlBackup">
+      <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\MySqlBackup.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>F:\ \tika_app\AngularWebApiGrid-master\AngularWebApiGrid\bin\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiController\AddressController.cs" />
+    <Compile Include="ApiController\CenterController.cs" />
+    <Compile Include="ApiController\CenterPagingController.cs" />
+    <Compile Include="ApiController\CountryController.cs" />
+    <Compile Include="ApiController\UsersPagingController.cs" />
+    <Compile Include="ApiController\EmployeeController.cs" />
+    <Compile Include="ApiController\QuerySortingExtensions.cs" />
+    <Compile Include="ApiController\UserController.cs" />
+    <Compile Include="ApiController\VaccinationController.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CenterController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PagedResult.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VaccineController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Libs\Authenticate.cs" />
+    <Compile Include="Libs\Authentication.cs" />
+    <Compile Include="Libs\DBGateway.cs" />
+    <Compile Include="Libs\EncrDecrAction.cs" />
+    <Compile Include="Libs\FileLocations.cs" />
+    <Compile Include="Libs\IOFileOperation.cs" />
+    <Compile Include="Libs\Mailer.cs" />
+    <Compile Include="Libs\SessionHandler.cs" />
+    <Compile Include="Libs\UtilityLibrary.cs" />
+    <Compile Include="Libs\ZipFiles.cs" />
+    <Compile Include="Models\Account\Account.cs" />
+    <Compile Include="Models\Centers.cs" />
+    <Compile Include="Models\ChildInfo.cs" />
+    <Compile Include="Models\DBGateway.cs" />
+    <Compile Include="Models\Districts.cs" />
+    <Compile Include="Models\DynamicDataObject.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeDbContext.cs" />
+    <Compile Include="Models\Thanas.cs" />
+    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\Vaccin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Classes\MenuItems.cs" />
+    <Compile Include="Views\Classes\PaginationView.cs" />
+    <Compile Include="Views\Classes\TableView.cs" />
+    <Compile Include="Views\Classes\TemplateItems.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\js\npm.js" />
+    <Content Include="Content\CSS\bootstrap-datepicker.min.css" />
+    <Content Include="Content\CSS\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\CSS\bootstrap-rtl.css" />
+    <Content Include="Content\CSS\bootstrap-rtl.min.css" />
+    <Content Include="Content\CSS\bootstrap-theme.min.css" />
+    <Content Include="Content\CSS\bootstrap.min.css" />
+    <Content Include="Content\CSS\bootstrap.min.js" />
+    <Content Include="Content\CSS\classic.css" />
+    <Content Include="Content\CSS\classic.date.css" />
+    <Content Include="Content\CSS\classic.time.css" />
+    <Content Include="Content\CSS\datepicker\images\animated-overlay.gif" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\CSS\datepicker\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\CSS\datepicker\jquery-ui-1.7.1.custom.css" />
+    <Content Include="Content\CSS\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\CSS\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\CSS\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\CSS\jquery-ui.min.css" />
+    <Content Include="Content\CSS\jquery-ui.structure.min.css" />
+    <Content Include="Content\CSS\jquery-ui.theme.min.css" />
+    <Content Include="Content\CSS\modern-business.css" />
+    <Content Include="Content\CSS\modernbusiness\modern-business.css" />
+    <Content Include="Content\CSS\morris.css" />
+    <Content Include="Content\CSS\plugins\morris.css" />
+    <Content Include="Content\CSS\sb-admin-rtl.css" />
+    <Content Include="Content\CSS\sb-admin.css" />
+    <Content Include="Content\CSS\slider\images\slide1.jpg" />
+    <Content Include="Content\CSS\slider\images\slide2.jpg" />
+    <Content Include="Content\CSS\slider\images\slide3.jpg" />
+    <Content Include="Content\CSS\slider\slider.css" />
+    <Content Include="Content\CSS\slider\style.css" />
+    <Content Include="Content\CSS\style.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\images\glyphicon-child.png" />
+    <Content Include="Content\images\vaccine_drop2.png" />
+    <Content Include="Content\js\bootstrap-datepicker.min.js" />
+    <Content Include="Content\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\bootstrap.min.js" />
+    <Content Include="Content\js\contact_me.js" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\datepicker\jquery-ui-1.7.1.custom.min.js" />
+    <Content Include="Content\js\en.js" />
+    <Content Include="Content\js\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\js\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\js\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\js\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\js\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\js\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\js\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\js\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\js\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\js\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\js\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\js\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\js\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\js\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\js\jqBootstrapValidation.js" />
+    <Content Include="Content\js\jquery-ui.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery\jquery.js" />
+    <Content Include="Content\js\js\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\js\js\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\js\js\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\js\js\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\js\js\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\js\js\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\js\js\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\js\js\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\js\js\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\js\js\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\js\js\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\js\js\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\js\js\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\js\js\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\js\js\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\js\js\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\js\js\js\bootstrap.js" />
+    <Content Include="Content\js\js\js\bootstrap.min.js" />
+    <Content Include="Content\js\js\js\contact_me.js" />
+    <Content Include="Content\js\js\js\custom.js" />
+    <Content Include="Content\js\js\js\en.js" />
+    <Content Include="Content\js\js\js\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\js\js\js\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\js\js\js\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\js\js\js\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\js\js\js\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\js\js\js\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\js\js\js\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\js\js\js\jqBootstrapValidation.js" />
+    <Content Include="Content\js\js\js\jquery-ui.min.js" />
+    <Content Include="Content\js\js\js\jquery.js" />
+    <Content Include="Content\js\js\js\moment.js" />
+    <Content Include="Content\js\js\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\js\js\js\plugins\flot\flot-data.js" />
+    <Content Include="Content\js\js\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\js\js\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\js\js\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\js\js\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\js\js\js\plugins\morris\morris-data.js" />
+    <Content Include="Content\js\js\js\plugins\morris\morris.js" />
+    <Content Include="Content\js\js\js\plugins\morris\morris.min.js" />
+    <Content Include="Content\js\js\js\plugins\morris\raphael.min.js" />
+    <Content Include="Content\js\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\js\js\plugins\flot\flot-data.js" />
+    <Content Include="Content\js\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\js\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\js\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\js\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Content\js\js\plugins\morris\morris-data.js" />
+    <Content Include="Content\js\js\plugins\morris\morris.js" />
+    <Content Include="Content\js\js\plugins\morris\morris.min.js" />
+    <Content Include="Content\js\js\plugins\morris\raphael.min.js" />
+    <Content Include="Content\js\moment.js" />
+    <Content Include="Content\js\shared\autocomplete.js" />
+    <Content Include="Content\js\shared\utility.js" />
+    <Content Include="Content\ng-bs3-datepicker.css" />
+    <Content Include="Content\NgTable\ng-table.css" />
+    <Content Include="Content\NgTable\Site.css" />
+    <Content Include="Content\themes\base\images\Banner.gif" />
+    <Content Include="Content\themes\base\images\Banner.jpeg" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Icon.png" />
+    <Content Include="PartialViews\Center\DeleteCenter.html" />
+    <Content Include="PartialViews\Center\EditCenter.html" />
+    <Content Include="PartialViews\Center\ListCenters.html" />
+    <Content Include="PartialViews\Child\AddChild.html" />
+    <Content Include="PartialViews\Child\ChildInfo.html" />
+    <Content Include="PartialViews\Child\EditChild.html" />
+    <Content Include="PartialViews\User\DeleteUser.html" />
+    <Content Include="PartialViews\User\EditUser.html" />
+    <Content Include="PartialViews\User\ListUsers.html" />
+    <Content Include="PartialViews\User\showUser.html" />
+    <Content Include="PartialViews\Vaccine\DeleteTika.html" />
+    <Content Include="PartialViews\Vaccine\EditTika.html" />
+    <Content Include="PartialViews\Vaccine\ListTika.html" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\angular-datepicker.js" />
+    <Content Include="Scripts\app\CenterController\centerListApp.js" />
+    <Content Include="Scripts\app\CenterController\centerListController.js" />
+    <Content Include="Scripts\app\CenterController\centerManagementApp.js" />
+    <Content Include="Scripts\app\CenterController\centerManagementControllers.js" />
+    <Content Include="Scripts\app\VaccinControllers\app.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Content\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\CSS\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\CSS\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\CSS\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\CSS\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\CSS\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\CSS\font-awesome\less\core.less" />
+    <Content Include="Content\CSS\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\CSS\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\CSS\font-awesome\less\icons.less" />
+    <Content Include="Content\CSS\font-awesome\less\larger.less" />
+    <Content Include="Content\CSS\font-awesome\less\list.less" />
+    <Content Include="Content\CSS\font-awesome\less\mixins.less" />
+    <Content Include="Content\CSS\font-awesome\less\path.less" />
+    <Content Include="Content\CSS\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\CSS\font-awesome\less\spinning.less" />
+    <Content Include="Content\CSS\font-awesome\less\stacked.less" />
+    <Content Include="Content\CSS\font-awesome\less\variables.less" />
+    <Content Include="Content\CSS\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_core.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_list.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_path.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\CSS\font-awesome\scss\_variables.scss" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\app\UserControllers\app.js" />
+    <Content Include="Scripts\app\UserControllers\users.controller.js" />
+    <Content Include="Scripts\app\UserControllers\UserApp.js" />
+    <Content Include="Scripts\app\UserControllers\userController.js" />
+    <Content Include="Scripts\app\VaccinControllers\controller.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\js\jquery.js" />
+    <Content Include="Scripts\js\moment.js" />
+    <Content Include="Scripts\js\morris-data.js" />
+    <Content Include="Scripts\js\morris.min.js" />
+    <Content Include="Scripts\js\ng-bs3-datepicker.js" />
+    <Content Include="Scripts\js\raphael.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\ng-bs3-datepicker.js" />
+    <Content Include="Scripts\ng-table.js" />
+    <Content Include="Scripts\ng-table.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\restangular.js" />
+    <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Views\Shared\ChildInfo.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Views\Home\ShowUser.cshtml" />
+    <Content Include="Views\Home\ChildInfo.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout_Admin.cshtml" />
+    <Content Include="Views\Shared\_Layout_Users.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\LogIn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Vaccine\Test.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\Vaccine\Index.cshtml" />
+    <Content Include="Views\Center\Index.cshtml" />
+    <Content Include="Views\Center\EditCenter.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\js\js\js\flot\" />
+    <Folder Include="Content\js\js\js\morris\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\angular-route.min.js.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5304</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

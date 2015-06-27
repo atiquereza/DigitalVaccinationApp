@@ -1,0 +1,16 @@
+﻿@using AngularJSDemo.Views.Classes
+@{
+
+     
+    if(TemplateItems.HasAdminView(Session))  
+    {
+        Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout_Users.cshtml";
+    } 
+
+    
+}
+
