@@ -19,7 +19,7 @@ namespace AngularJSDemo.Libs
         {
             try
             {
-                conString = ConfigurationManager.ConnectionStrings["ManiacConnectionString"].ConnectionString;
+                conString = ConfigurationManager.ConnectionStrings["DigitalVaccinationConnectionString"].ConnectionString;
                 SqlConnectionObj = new MySqlConnection(conString);
                 SqlCommandobj = SqlConnectionObj.CreateCommand();
             }
