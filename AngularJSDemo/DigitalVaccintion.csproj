@@ -50,7 +50,7 @@
       <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\EPPlus.dll</HintPath>
     </Reference>
     <Reference Include="Interop.Shell32">
-      <HintPath>..\..\..\..\..\tika_app\ManiacProject\ManiacProject\bin\Interop.Shell32.dll</HintPath>
+      <HintPath>..\..\vs13_test\ManiacProject\ManiacProject\bin\Interop.Shell32.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -64,7 +64,7 @@
     </Reference>
     <Reference Include="MySql.Data, Version=6.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\MySql.Data.dll</HintPath>
+      <HintPath>C:\Users\home\Desktop\ManiacProject\ManiacProject\bin\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySqlBackup">
       <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\MySqlBackup.dll</HintPath>
@@ -506,6 +506,7 @@
     <Content Include="Views\Vaccine\Index.cshtml" />
     <Content Include="Views\Center\Index.cshtml" />
     <Content Include="Views\Center\EditCenter.cshtml" />
+    <Content Include="Views\Shared\_Layout_General_Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

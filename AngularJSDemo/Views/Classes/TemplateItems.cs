@@ -51,5 +51,22 @@ namespace AngularJSDemo.Views.Classes
             return true;
         }
 
+
+        public static bool HasUserView(HttpSessionStateBase Session)
+        {
+            if (Session.Count == 0 || Session == null)
+            {
+                return false;
+            }
+
+            Dictionary<string, string> sessionData = SessionHandler.GetSessionData(Session);
+            if (sessionData["RoleName"] == "ViewUser")
+            {
+                return false;
+            }
+
+            return true;
+        }
+
     }
 }
