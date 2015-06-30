@@ -49,9 +49,10 @@
     <Reference Include="EPPlus">
       <HintPath>..\..\..\..\ManiacProject\ManiacProject\bin\EPPlus.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.Shell32">
-      <HintPath>..\..\vs13_test\ManiacProject\ManiacProject\bin\Interop.Shell32.dll</HintPath>
+    <Reference Include="Interop.Shell32, Version=1.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Interop.Shell32.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Exchange.WebServices">
