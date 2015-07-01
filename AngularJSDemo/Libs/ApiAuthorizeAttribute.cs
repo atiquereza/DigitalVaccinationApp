@@ -5,11 +5,25 @@ using System.Web;
 
 namespace System.Web.Http
 {
-    public class ApiAuthorizeAttribute : System.Web.Http.AuthorizeAttribute
+    public class CustomAuthorize : System.Web.Http.AuthorizeAttribute
     {
-        private string _responseReason = "";
-        public bool ByPassAuthorization { get; set; }
-
+        public override void OnAuthorization(
+               System.Web.Http.Controllers.HttpActionContext actionContext)
+        {
+            HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
+            
+            if (Session != null)
+            {
+                //Dictionary<string, string> sessionData = SessionHandler.GetSessionData(Session);
+                //if (!Authentication.Authenticate(sessionData, Session))
+                //{
+                //    ViewResult result = new ViewResult();
+                //    result.ViewName = "Error";
+                //    result.ViewData["Message"] = "You dont have privilege for this action.!";
+                //    filterContext.Result = result;
+                //}
+            }
+        }
     }
 }
 

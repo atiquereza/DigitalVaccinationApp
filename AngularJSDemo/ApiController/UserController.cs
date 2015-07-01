@@ -58,31 +58,18 @@ namespace DigitalVaccination.ApiController
             aUserInfo.Childs = childList;
             return aUserInfo;
         }
-
-
-
-        // GET api/<controller>/5
-
-      //  private int x = 0;
-    //    [Authenticate(ByPassAuthorization=true)]
-        [Authenticate]
+        
+        [CustomAuthorize]
         public UserInfo Get(int id)
-        {
-           // string yser=User.ToString();
-            //if (AuthenticateAttribute.IsDefined()..)
-            //{
-            //    return;
-            //}
-
-
+        {  
             HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
-
-           Dictionary<string, string> aDictionary = SessionHandler.GetSessionData(Session);
+            Dictionary<string, string> aDictionary = SessionHandler.GetSessionData(Session);
             
 
 
-            string query = "select * from userinfo where id=" + id + ";";
-            DataSet aSet = aGateway.Select(query);
+            string query = "select * from userinfo where id=@id;";
+            Hashtable aTable = new Hashtable() { { "id", id } };
+            DataSet aSet = aGateway.Select(query,aTable);
 
             List<UserInfo> userInfos = new List<UserInfo>();
             UserInfo aUserInfo = new UserInfo();
