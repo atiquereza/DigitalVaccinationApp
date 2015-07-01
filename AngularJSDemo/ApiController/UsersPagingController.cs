@@ -25,7 +25,7 @@ namespace DigitalVaccination.ApiController
             // demoContext = new DemoContext();
             aGateway = new DBGateway();
         }
-
+         [CustomAuthorize]
         // GET api/customers
         public PagedResult<UserInfo> Get(int pageNo = 1, int pageSize = 50, [FromUri] string[] sort = null, string search = null)
         {

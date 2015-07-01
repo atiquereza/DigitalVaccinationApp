@@ -14,15 +14,17 @@ namespace DigitalVaccination.Libs
         public static Dictionary<string, string> GetSessionData(HttpSessionStateBase Session)
         {
             Dictionary<string, string> sessionData = new Dictionary<string, string>();
-            sessionData["LogInValue"] = EncrDecrAction.Decrypt(Session["LogInValue"].ToString(), true);
-            sessionData["LoggedIn"] = EncrDecrAction.Decrypt(Session["LoggedIn"].ToString(),true);
-            sessionData["UserId"] = EncrDecrAction.Decrypt(Session["UserId"].ToString(),true);
-            sessionData["UserRoleId"] = EncrDecrAction.Decrypt(Session["UserRoleId"].ToString(), true);
-            sessionData["RoleName"] = EncrDecrAction.Decrypt(Session["RoleName"].ToString(), true);
-            sessionData["UserName"] = EncrDecrAction.Decrypt(Session["UserName"].ToString(), true);
-            sessionData["ParentRoleName"] = EncrDecrAction.Decrypt(Session["ParentRoleName"].ToString(), true);
+            if (Session != null)
+            {
+                sessionData["LogInValue"] = EncrDecrAction.Decrypt(Session["LogInValue"].ToString(), true);
+                sessionData["LoggedIn"] = EncrDecrAction.Decrypt(Session["LoggedIn"].ToString(), true);
+                sessionData["UserId"] = EncrDecrAction.Decrypt(Session["UserId"].ToString(), true);
+                sessionData["UserRoleId"] = EncrDecrAction.Decrypt(Session["UserRoleId"].ToString(), true);
+                sessionData["RoleName"] = EncrDecrAction.Decrypt(Session["RoleName"].ToString(), true);
+                sessionData["UserName"] = EncrDecrAction.Decrypt(Session["UserName"].ToString(), true);
+                sessionData["ParentRoleName"] = EncrDecrAction.Decrypt(Session["ParentRoleName"].ToString(), true);
 
-            
+            }
             return sessionData;
         }
 

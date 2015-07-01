@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Web;
 
 namespace System.Web.Http
@@ -11,7 +12,7 @@ namespace System.Web.Http
                System.Web.Http.Controllers.HttpActionContext actionContext)
         {
             HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
-            
+
             if (Session != null)
             {
                 //Dictionary<string, string> sessionData = SessionHandler.GetSessionData(Session);
@@ -22,6 +23,12 @@ namespace System.Web.Http
                 //    result.ViewData["Message"] = "You dont have privilege for this action.!";
                 //    filterContext.Result = result;
                 //}
+            }
+            else
+            {
+                //actionContext.Response=null;
+               
+                HandleUnauthorizedRequest(actionContext);
             }
         }
     }

@@ -182,3 +182,4 @@ D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Linq.Dynamic.dll

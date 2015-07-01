@@ -106,7 +106,7 @@ namespace DigitalVaccination.ApiController
             aUserInfo.Childs = childList;
             return aUserInfo;
         }
-
+         [CustomAuthorize]
         // POST api/<controller>
         public HttpResponseMessage Put(UserInfo aUser)
         {
@@ -136,7 +136,7 @@ namespace DigitalVaccination.ApiController
             }
         }
 
-
+         [CustomAuthorize]
         // PUT api/<controller>/5
         public HttpResponseMessage Post(UserInfo aUser)
         {
@@ -172,7 +172,7 @@ namespace DigitalVaccination.ApiController
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
         }
-
+         [CustomAuthorize]
         // DELETE api/<controller>/5
         public HttpResponseMessage Delete(int id)
         {
