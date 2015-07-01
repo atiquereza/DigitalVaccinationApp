@@ -59,13 +59,10 @@ namespace DigitalVaccination.ApiController
             return aUserInfo;
         }
         
-        [CustomAuthorize]
+        //[ApiAuthorize]
         public UserInfo Get(int id)
         {  
-            HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
-            Dictionary<string, string> aDictionary = SessionHandler.GetSessionData(Session);
             
-
 
             string query = "select * from userinfo where id=@id;";
             Hashtable aTable = new Hashtable() { { "id", id } };
@@ -112,8 +109,6 @@ namespace DigitalVaccination.ApiController
         {
             if (ModelState.IsValid)
             {
-
-                //string query1 = "UPDATE userinfo SET VaccineName=@name, StartDay=@start_day, EndDay=@end_time,Description=@description WHERE  ID=@id;";
                 string query = "UPDATE `tikaappdb`.`userinfo` SET `UserName`=@userName, `FullName`=@fullName, `FatherName`=@fathersName, `MotherName`=@mothersName, `CellNumber`=@phoneNumber, `BirthDay`=@birthdate, `CurrentAddress`=@currentAddress, `PermanentAddress`=@permanentAddress, `BirthCertificateID`=@birthCertificate WHERE  `ID`=@id;";
                 Hashtable aHashtable = new Hashtable();
                 aHashtable.Add("fullName", aUser.FullName);
@@ -142,11 +137,6 @@ namespace DigitalVaccination.ApiController
         {
             if (ModelState.IsValid)
             {
-                //db.Employees.Add(model);
-                //db.SaveChanges();
-
-
-                //string query = "INSERT INTO vaccineinfo (VaccineName, StartDay, EndDay,Description) VALUES (@name, @start_day, @end_day,@description);";
                 string query = "INSERT INTO `tikaappdb`.`userinfo` (`UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES (@UserID, @UserName, @FullName, @FatherName, @MotherName, @CellNumber, @BirthDay, @CurrentAddress, @PermanentAddress, @BirthCertificateID);";
                 Hashtable aHashtable = new Hashtable();
                 aHashtable.Add("id", aUser.Id);
@@ -174,6 +164,7 @@ namespace DigitalVaccination.ApiController
         }
 
         // DELETE api/<controller>/5
+
         public HttpResponseMessage Delete(int id)
         {
             string query = "DELETE FROM `tikaappdb`.`userinfo` WHERE  `ID`=" + id + ";";

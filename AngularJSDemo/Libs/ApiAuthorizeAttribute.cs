@@ -1,30 +1,49 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 
-namespace System.Web.Http
+
+namespace DigitalVaccination.Libs
 {
-    public class CustomAuthorize : System.Web.Http.AuthorizeAttribute
+    public class ApiAuthorize : System.Web.Http.AuthorizeAttribute
     {
         public override void OnAuthorization(
                System.Web.Http.Controllers.HttpActionContext actionContext)
         {
             HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
-            
+
+            if (Session == null)
+            {
+                actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Forbidden);
+                return;
+            }
+
+            if (Session != null && Session.Count == 0)
+            {
+                actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Forbidden);
+                return;
+            }
+
             if (Session != null)
             {
-                //Dictionary<string, string> sessionData = SessionHandler.GetSessionData(Session);
-                //if (!Authentication.Authenticate(sessionData, Session))
-                //{
-                //    ViewResult result = new ViewResult();
-                //    result.ViewName = "Error";
-                //    result.ViewData["Message"] = "You dont have privilege for this action.!";
-                //    filterContext.Result = result;
-                //}
+                Dictionary<string, string> session = SessionHandler.GetSessionData(Session);
+                if(Authentication.ApiAuthenticate(session,Session))
+                {
+                    return;
+                }
+
+                actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Forbidden);
+                return;
+
+
             }
         }
+
+
+
     }
 }
-
-////http://www.asp.net/web-api/overview/security/authentication-filters

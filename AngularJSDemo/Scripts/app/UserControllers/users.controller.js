@@ -1,11 +1,4 @@
 ﻿'use strict';
-
-    //angular
-    //    .module('UsersPagingApp')
-    //    .controller('UsersController', UsersController);
-
-    //UsersController.$inject = ['$scope', 'Restangular', 'ngTableParams'];
-
     UsersPagingApp.controller("UsersController", [
     '$scope', 'Restangular', 'ngTableParams',
     function ($scope, Restangular, ngTableParams) {
@@ -18,8 +11,6 @@
         $scope.tableParams = new ngTableParams({
             page: 1,
             count: 7,
-            //noCounts: true,
-            //counts: [],
             sorting: {
                 UserID: 'asc'
             }
@@ -55,55 +46,6 @@
         
     }
 ]);
-
-    //function UsersController($scope, Restangular, ngTableParams) {
-    //    /* jshint validthis:true */
-    //    var vm = this;
-
-    //    $scope.search = '';
-
-    //    $scope.tableParams = new ngTableParams({
-    //        page: 1,
-    //        count: 7,
-    //        //noCounts: true,
-    //        //counts: [],
-    //        sorting: {
-    //            UserID: 'asc'
-    //        }
-    //    },
-    //    {
-    //        getData: function ($defer, params) {
-    //            // Load the data from the API
-    //            Restangular.all('UsersPaging').getList({
-    //                pageNo: params.page(),
-    //                pageSize: params.count(),
-    //                sort: params.orderBy(),
-    //                search: $scope.search
-    //            }).then(function (customers) {
-    //              // console.log(customers);
-    //                $scope.RowCount = customers.paging.totalRecordCount;
-    //                // Tell ngTable how many records we have (so it can set up paging)
-    //                params.total(customers.paging.totalRecordCount);
-
-    //                // Return the customers to ngTable
-    //                $defer.resolve(customers);
-    //            }, function (response) {
-    //                // Notify of error
-    //            });
-    //        }
-    //    });
-
-    //    // Watch for changes to the search text, so we can reload the table
-    //    $scope.$watch(angular.bind(vm, function () {
-    //        return $scope.search;
-    //    }), function (value) {
-    //        $scope.tableParams.reload();
-    //    });
-    //}
-
-
-
-
    
         UsersPagingApp.controller("EditUserController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
@@ -114,13 +56,6 @@
         $scope.DatePublish = function () {
             console.log($scope.MyDate1);
         };
-
-        //$scope.$watch('BirthDate', function (newValue, oldValue) {
-        //    $scope.parent = { BirthDate: '' };
-        //    console.log('BirthDate changed', oldValue, newValue);
-        //}, true);
-
-        // $scope.form.BirthDate = null;
         $scope.child = {}
 
         $scope.isDate = false;
@@ -133,14 +68,7 @@
           
            
             var obj = {
-                //ID: $scope.ID,
-                //UserId: $scope.UserId,
-                //StartDay: $scope.startTime,
-                //EndDay: $scope.endTime,
-                //Description: $scope.description,
                 BirthCertificateID: $scope.BirthCertificateID,
-                //BirthDate: $scope.BirthDate,
-
                 BirthDate: $scope.MyDate1,
                 CurrentAddress: $scope.CurrentAddress,
                 FatherName: $scope.FatherName,
@@ -193,13 +121,6 @@
                 $scope.PermanentAddress = data.PermanentAddress;
                 $scope.BirthCertificateID = data.BirthCertificateID;
                 $scope.UserId = data.UserId;
-                
-
-
-                //$scope.startTime = data.StartDay;
-                //$scope.endTime = data.EndDay;
-                //$scope.description = data.Description;
-
 
             });
         }

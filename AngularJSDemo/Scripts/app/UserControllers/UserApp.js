@@ -39,8 +39,8 @@ UserApp.config(['$routeProvider', function ($routeProvider) {
         });
 
 }]);
-UserApp.run(['$rootScope', '$route', function ($rootScope, $route) {
-    $rootScope.$on('$routeChangeSuccess', function () {
-        $rootScope.message = $route.current.message;
-    });
-}]);
+//UserApp.run(['$rootScope', '$route', function ($rootScope, $route) {
+//    $rootScope.$on('$routeChangeSuccess', function () {
+//        $rootScope.message = $route.current.message;
+//    });
+//}]);

@@ -8,13 +8,10 @@ UserControllers.controller("UserShowController", ['$scope', '$http',
         $scope.isThingsCollapsed = false;
         $http.get('/api/User').success(function (data) {
             $scope.UserInfo = data;
-            //$scope.$apply();
             $scope.ChildsList = data.Childs;
-            //console.log(data.Childs);
-            //console.log(data);
 
         });
-        //  alert(1);
+
     }]
 );
 
@@ -55,7 +52,6 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
             };
 
             $scope.delete = function () {
-
                 $http.delete('/api/User/' + $scope.Id).success(function (data) {
                     var url = '@Url.Action("Index", "Home")';
                    // $location.url('/User/Index');
@@ -71,23 +67,11 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
 // in edit.html and provide an option for create and modify the employee and save the employee record
 UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
-        // $scope.parent = { BirthDate: '' };
-
-        // $scope.BirthDate = new Date();
-       // $scope.MyDate1 = "20/03/2012";
-        //$scope.MyDate1 = new Date() | date:'yyyy-MM-dd';
         $scope.MyDate1 = $filter('date')(new Date(), 'yyyy/MM/dd');
         $scope.DatePublish = function () {
             console.log($scope.MyDate1);
         };
 
-        //$scope.$watch('BirthDate', function (newValue, oldValue) {
-        //    $scope.parent = { BirthDate: '' };
-        //    console.log('BirthDate changed', oldValue, newValue);
-        //}, true);
-
-        // $scope.form.BirthDate = null;
-       // $scope.child = {}
 
         $scope.isDate = false;
         
@@ -100,14 +84,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
            
 
             var obj = {
-                //ID: $scope.ID,
-                //UserId: $scope.UserId,
-                //StartDay: $scope.startTime,
-                //EndDay: $scope.endTime,
-                //Description: $scope.description,
                 BirthCertificateID: $scope.BirthCertificateID,
-                //BirthDate: $scope.BirthDate,
-
                 BirthDate: $scope.MyDate1,
                 CurrentAddress: $scope.CurrentAddress,
                 FatherName: $scope.FatherName,
@@ -118,11 +95,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                 PhoneNumber: $scope.PhoneNumber,
                 UserId: $scope.UserId,
                 UserName: $scope.UserName,
-
-
             };
-            console.log(obj.Id);
-
             if ($scope.ID == 0) {
 
                 $http.post('/api/User/', obj).success(function (data) {
@@ -144,11 +117,6 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
 
         if ($routeParams.id) {
             $scope.form = {};
-            //$scope.User.BirthDate = [];
-            //alert($routeParams.ID);
-           // console.log($routeParams.id);
-          //  $scope.ID = $routeParams.id;
-            
             $scope.vaccinName = "Hellooo";
             $http.get('/api/User/' + $routeParams.id).success(function (data) {
                 $scope.user = data;
@@ -170,12 +138,6 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                     $scope.title = "Create New User";
                     console.log($scope.ID);
                 }
-
-                //$scope.startTime = data.StartDay;
-                //$scope.endTime = data.EndDay;
-                //$scope.description = data.Description;
-
-
             });
         }
         else {
@@ -183,19 +145,3 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
         }
     }
 ]);
-
-//UserControllers.controller("MainCntl", [
-//    '$scope', '$filter', '$route', '$routeParams', '$location',
-//    function($scope, $routeParams, $location, $route) {
-////function MainCntl($scope, $route, $routeParams, $location) {
-//        $('.input-group.date').datepicker({
-//            format: "dd/mm/yyyy",
-//            startDate: "01-05-2014",
-//            endDate: "31-12-2017",
-//            todayBtn: "linked",
-//            autoclose: true,
-//            todayHighlight: true
-//        });
-//    }
-//]);
-

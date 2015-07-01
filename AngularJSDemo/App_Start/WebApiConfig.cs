@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Http;
 using System.Web.Http.WebHost;
 using System.Web.Routing;
 using System.Web.SessionState;
-using DigitalVaccination.Libs;
 
 namespace DigitalVaccination
 {
@@ -15,13 +11,7 @@ namespace DigitalVaccination
         public static void Register(HttpConfiguration config)
         {
             System.Web.Mvc.ControllerBuilder.Current.DefaultNamespaces.Add("DigitalVaccination.ApiController");
-            //config.Routes.MapHttpRoute(
-            //    name: "DefaultApi",
-            //    routeTemplate: "api/{controller}/{id}",
-            //    defaults: new { id = RouteParameter.Optional }
-            //);
-
-
+            
             RouteTable.Routes.MapHttpRoute(
                     name: "DefaultApi",
                     routeTemplate: "api/{controller}/{id}",
