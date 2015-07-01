@@ -65,6 +65,7 @@ namespace DigitalVaccination.ApiController
 
       //  private int x = 0;
     //    [Authenticate(ByPassAuthorization=true)]
+        [Authenticate]
         public UserInfo Get(int id)
         {
            // string yser=User.ToString();

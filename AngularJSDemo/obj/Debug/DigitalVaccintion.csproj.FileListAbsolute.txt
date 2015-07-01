@@ -87,7 +87,6 @@ C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.Sq
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\MySql.Data.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.dll
-C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Linq.Dynamic.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.dll
