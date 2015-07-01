@@ -1,0 +1,167 @@
+﻿<div class="row">
+
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            User Delete <small></small>
+        </h1>
+
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-user"></i> User Manegement
+            </li>
+            <li class="active" ng-bind="title">
+                <i></i>
+                <!--ng-bind="'MyApp - ' + $root.title"-->
+            </li>
+        </ol>
+    </div>
+</div>
+
+    <form class="form-horizontal" style="max-width: 500px;">
+        <strong class="error">{{ error }}</strong>
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                User Name :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ UserName }}
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Full Name :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ FullName }}
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Father's Name :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ FatherName }}
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Mother's Name :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ MotherName }}
+                </p>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Phone Number :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ PhoneNumber }}
+                </p>
+            </div>
+        </div>
+
+
+        <!--<div class="form-group">
+            <label for="BirthDate">
+                Date of Birth:
+            </label>
+            <input type="text" class="form-control" id="BirthDate" ng-model="BirthDate" />
+        </div>-->
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Birth Date :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ MyDate1 }}
+                </p>
+            </div>
+        </div>
+
+        <!--<button type="submit" class="btn btn-default" ng-click="DatePublish()">
+            Submit
+        </button>-->
+
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Current Address :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ CurrentAddress }}
+                </p>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Permanent Address :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ PermanentAddress }}
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-xs-3">
+                Birth Certificate :
+            </label>
+            <div class="col-xs-9">
+                <p class="form-control-static">
+                    {{ BirthCertificateID }}
+                </p>
+            </div>
+        </div>
+
+
+        <a href="/User/Index" class="btn btn-info">Back to User List</a>
+        <button type="submit" data-ng-disabled="ValidUser()" class="btn btn-default" ng-click="delete()">
+            Delete
+        </button>
+
+
+
+
+
+
+
+    </form>

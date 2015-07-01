@@ -1,0 +1,109 @@
+﻿
+<h3>Center List</h3>
+
+<p>
+
+    <input class="form-control" placeholder="Search Center" type="text" ng-model="search" ng-model-options="{ debounce: 500 }" />
+</p>
+
+
+
+<table ng-table="tableParams" class="table table-striped">
+    <thead>
+        <tr>
+            <th class="sortable" ng-class="{
+                    'sort-asc': tableParams.isSortBy('ID', 'asc'),
+                    'sort-desc': tableParams.isSortBy('ID', 'desc')
+                  }"
+                ng-click="tableParams.sorting({'ID' : tableParams.isSortBy('ID', 'asc') ? 'desc' : 'asc'})" rowspan="2">
+                <div><i class="fa fa-fw fa-hospital-o"></i> ID</div>
+            </th>
+
+
+
+            <th class="text-center sortable" ng-class="{
+                    'sort-asc': tableParams.isSortBy('CentersName', 'asc'),
+                    'sort-desc': tableParams.isSortBy('CentersName', 'desc')
+                    
+                  }"
+                ng-click="tableParams.sorting({'CentersName' : tableParams.isSortBy('CentersName', 'asc') ? 'desc' : 'asc'})">
+                <div>Center Name</div>
+            </th>
+            
+
+            <th class="text-center sortable" ng-class="{
+                    'sort-asc': tableParams.isSortBy('ThanasName', 'asc'),
+                    'sort-desc': tableParams.isSortBy('ThanasName', 'desc')
+                  }"
+                ng-click="tableParams.sorting({'ThanasName' : tableParams.isSortBy('ThanasName', 'asc') ? 'desc' : 'asc'})">
+                <div>Thana Name</div>
+            </th>
+            <th class="text-center sortable" ng-class="{
+                    'sort-asc': tableParams.isSortBy('DistrictsName', 'asc'),
+                    'sort-desc': tableParams.isSortBy('DistrictsName', 'desc')
+                  }"
+                ng-click="tableParams.sorting({'DistrictsName' : tableParams.isSortBy('DistrictsName', 'asc') ? 'desc' : 'asc'})">
+                <div>District</div>
+            </th>
+
+            <th class="text-center sortable" ng-class="{
+                    'sort-asc': tableParams.isSortBy('CentersAddress', 'asc'),
+                    'sort-desc': tableParams.isSortBy('CentersAddress', 'desc')
+                  }"
+                ng-click="tableParams.sorting({'CentersAddress' : tableParams.isSortBy('CentersAddress', 'asc') ? 'desc' : 'asc'})">
+                <div>Address</div>
+            </th>
+
+        
+
+
+
+
+            <th class="text-center">
+                <div><i class="glyphicon glyphicon-edit"></i> Edit</div>
+            </th>
+            <th class="text-center">
+                <div><i class="glyphicon glyphicon-trash"></i> Delete</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="center in $data">
+            <td data-title="'ID'" sortable="'ID'">
+                {{center.ID}}
+            </td>
+            <td data-title="'Center Name'" sortable="'CentersName'">
+                {{center.CentersName}}
+            </td>
+
+           
+
+            <td data-title="'Thana'" sortable="'ThanasName'">
+                {{center.ThanasName}}
+            </td>
+            
+            <td data-title="'District'" sortable="'DistrictsName'">
+                {{center.DistrictsName}}
+            </td>
+            <td data-title="'Address'" sortable="'CentersAddress'">
+                {{center.CentersAddress}}
+            </td>
+
+
+
+            <td data-title="'Actions'">
+                <a href="/Center/EditCenter#/editCenter/{{ center.ID }}" class="glyphicon glyphicon-edit"> Edit</a>
+
+
+            </td>
+
+            <td data-title="'Actions'">
+                <a href="/Center/EditCenter#/deleteCenter/{{ center.ID }}" class="glyphicon glyphicon-trash"> Delete</a>
+
+            </td>
+
+        </tr>
+    </tbody>
+</table>
+
+

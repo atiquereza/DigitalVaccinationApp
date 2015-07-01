@@ -1,0 +1,94 @@
+﻿@using System.ServiceModel.Channels
+@using DigitalVaccination.Libs
+@{
+    ViewBag.Title = "Registration";
+    string formAction = UtilityLibrary.GetBaseURL() + "Account/SubmitRegister";
+    string message = string.Empty;
+    if (ViewData["Message"] != null)
+    {
+        message = ViewData["Message"].ToString();
+    }
+    
+}
+
+@section JavaScriptAndCSS
+{
+        <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap-theme.min.css">
+        <script src="/Content/bootstrap/js/bootstrap.min.js"></script>
+}
+
+
+
+<div class="container-fluid">
+    <section class="container">
+        <div class="container-page">
+            <form role="form" action="@formAction" method="POST">
+                <div class="col-md-6">
+				    <h3 class="dark-grey">Registration</h3>
+				    <br/>
+                    <div>
+                        @message
+                    </div>
+                    <div class="form-group col-lg-12" required="required">
+                        <label>Baby's Name*</label>
+                        <input type="text" name="childName" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-12" required="required">
+                        <label>Baby's Birthday*</label>
+                        <input type="text" name="birthDay" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label>Father's Name*</label>
+                        <input type="text" name="fathersName" class="form-control" id="" value="">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label>Mother's Name*</label>
+                        <input type="text" name="mothersName" class="form-control" id="" value="">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <label>Current Address</label>
+                        <input type="text" name="currentAddress" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-12">
+                        <label>Permanent Address*</label>
+                        <input type="text" name="permanentAddress" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Mobile Number*</label>
+                        <input type="text" name="cellNumber" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-7">
+                        <label>Birth Certificate ID</label>
+                        <input type="text" name="birthCertificateId" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Email Address*</label>
+                        <input type="email" name="emailAddress" class="form-control" id="" value="">
+                    </div>
+
+                    <div class="form-group col-lg-6">
+                        <label>Repeat Email Address*</label>
+                        <input type="email" name="repeatEmailAddress" class="form-control" id="" value="">
+                    </div>
+
+                </div>
+
+		        <div class="col-md-6">
+		            <h3 class="dark-grey">Instructions after Registration</h3>
+		            <p>
+		                By clicking on "Register" an a verification code will be sent to your <br/>mobile number. On next page, please enter the verification code to <br/>complete the registration.<br/>
+		            </p>
+		            <button type="submit" class="btn btn-primary">Register</button>
+
+		        </div>
+            </form>
+		</div>
+	</section>
+</div>

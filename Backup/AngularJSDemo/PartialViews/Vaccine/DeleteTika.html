@@ -1,0 +1,53 @@
+﻿<h3>Are you want to sure to delete this record?</h3>
+<hr />
+<form class="form-horizontal" style="max-width: 500px;">
+    <div class="form-group">
+        <label class="control-label col-xs-3">
+            Vaccin Name :
+        </label>
+        <div class="col-xs-9">
+            <p class="form-control-static">
+                {{ vaccinName }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">
+            Start Time :
+        </label>
+        <div class="col-xs-9">
+            <p class="form-control-static">
+                {{ startTime }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-3">
+            End Time :
+        </label>
+        <div class="col-xs-9">
+            <p class="form-control-static">
+                {{ endTime }}
+            </p>
+        </div>
+    </div>
+  
+    <div class="form-group">
+        <label class="control-label col-xs-3">
+            Description :
+        </label>
+        <div class="col-xs-9">
+            <p class="form-control-static">
+                {{ description }}
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-xs-offset-3 col-xs-9 text-center">
+            <a href="#/list" class="btn btn-info">Back to List</a>
+            <button type="submit" class="btn btn-primary" ng-click="delete()">
+                Delete
+            </button>
+        </div>
+    </div>
+</form>

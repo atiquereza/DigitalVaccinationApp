@@ -1,0 +1,23 @@
+﻿@using DigitalVaccination.Views.Classes
+@{
+
+    if (Session.Count > 0)
+    {
+    
+    if (TemplateItems.HasAdminView(Session))
+    {
+        Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+    }
+    else if (!TemplateItems.HasAdminView(Session))
+    {
+        Layout = "~/Views/Shared/_Layout_Users.cshtml";
+    }
+}
+    else
+    {
+        Layout = "~/Views/Shared/_Layout_General_Users.cshtml";
+    }
+
+    
+}
+
