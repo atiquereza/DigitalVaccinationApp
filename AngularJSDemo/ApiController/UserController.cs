@@ -18,6 +18,7 @@ namespace DigitalVaccination.ApiController
         // GET api/<controller>
         public UserInfo Get()
         {
+           
 
             string query = "select * from userinfo where id=1";
             DataSet aSet = aGateway.Select(query);
@@ -61,8 +62,24 @@ namespace DigitalVaccination.ApiController
 
 
         // GET api/<controller>/5
+
+      //  private int x = 0;
+    //    [Authenticate(ByPassAuthorization=true)]
         public UserInfo Get(int id)
         {
+           // string yser=User.ToString();
+            //if (AuthenticateAttribute.IsDefined()..)
+            //{
+            //    return;
+            //}
+
+
+            HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
+
+           Dictionary<string, string> aDictionary = SessionHandler.GetSessionData(Session);
+            
+
+
             string query = "select * from userinfo where id=" + id + ";";
             DataSet aSet = aGateway.Select(query);
 

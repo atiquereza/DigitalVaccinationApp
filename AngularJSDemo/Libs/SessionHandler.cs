@@ -10,6 +10,7 @@ namespace DigitalVaccination.Libs
 {
     public static class SessionHandler
     {
+        
         public static Dictionary<string, string> GetSessionData(HttpSessionStateBase Session)
         {
             Dictionary<string, string> sessionData = new Dictionary<string, string>();
@@ -24,6 +25,8 @@ namespace DigitalVaccination.Libs
             
             return sessionData;
         }
+
+        
         public static HttpSessionStateBase SetSessionData(Dictionary<string,string> UserData, HttpSessionStateBase Session)
         {
             Dictionary<string, string> sessionData = new Dictionary<string, string>();

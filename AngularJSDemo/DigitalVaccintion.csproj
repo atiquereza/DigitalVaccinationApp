@@ -153,9 +153,7 @@
     <Compile Include="ApiController\AddressController.cs" />
     <Compile Include="ApiController\CenterController.cs" />
     <Compile Include="ApiController\CenterPagingController.cs" />
-    <Compile Include="ApiController\CountryController.cs" />
     <Compile Include="ApiController\UsersPagingController.cs" />
-    <Compile Include="ApiController\EmployeeController.cs" />
     <Compile Include="ApiController\QuerySortingExtensions.cs" />
     <Compile Include="ApiController\UserController.cs" />
     <Compile Include="ApiController\VaccinationController.cs" />
@@ -171,6 +169,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Libs\ApiAuthorizeAttribute.cs" />
     <Compile Include="Libs\Authenticate.cs" />
     <Compile Include="Libs\Authentication.cs" />
     <Compile Include="Libs\DBGateway.cs" />

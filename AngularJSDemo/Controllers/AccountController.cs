@@ -16,7 +16,7 @@ namespace DigitalVaccination.Controllers
        
         public ActionResult Index()
         {
-            return View("LogIn");
+           return View("LogIn");
         }
 
         [HttpPost]
