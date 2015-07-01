@@ -7,10 +7,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
-using AngularJSDemo.Libs;
-using AngularJSDemo.Models;
+using DigitalVaccination.Libs;
+using DigitalVaccination.Models;
 
-namespace AngularJSDemo.ApiController
+namespace DigitalVaccination.ApiController
 {
     public class UserController : System.Web.Http.ApiController
     {
@@ -18,6 +18,7 @@ namespace AngularJSDemo.ApiController
         // GET api/<controller>
         public UserInfo Get()
         {
+
             string query = "select * from userinfo where id=1";
             DataSet aSet = aGateway.Select(query);
 

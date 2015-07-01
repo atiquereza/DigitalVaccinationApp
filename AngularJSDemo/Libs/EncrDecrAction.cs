@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public static class EncrDecrAction
     {

@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.SessionState;
 
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public static class SessionHandler
     {

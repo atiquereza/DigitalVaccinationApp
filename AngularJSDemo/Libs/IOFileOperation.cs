@@ -12,7 +12,7 @@ using OfficeOpenXml.Style;
 using Excel = Microsoft.Office.Interop.Excel;
 using OfficeOpenXml;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public class IOFileOperation
     {

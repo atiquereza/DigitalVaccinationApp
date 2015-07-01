@@ -8,9 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Security;
 using System.DirectoryServices.AccountManagement;
-using AngularJSDemo.Libs;
+using DigitalVaccination.Libs;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
 
     public class Authentication

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AngularJSDemo.Controllers
+namespace DigitalVaccination.Controllers
 {
     public class PagedResult<T>
     {

@@ -9,11 +9,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Linq.Dynamic;
-using AngularJSDemo.Controllers;
-using AngularJSDemo.Libs;
-using AngularJSDemo.Models;
+using DigitalVaccination.Controllers;
+using DigitalVaccination.Libs;
+using DigitalVaccination.Models;
 
-namespace AngularJSDemo.ApiController
+namespace DigitalVaccination.ApiController
 {
     public class UsersPagingController : System.Web.Http.ApiController
     {

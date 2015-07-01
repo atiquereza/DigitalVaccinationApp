@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace AngularJSDemo.Models
+namespace DigitalVaccination.Models
 {
     public class EmployeeDbContext : DbContext
     {

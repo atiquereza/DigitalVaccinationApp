@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AngularJSDemo.ApiController
+namespace DigitalVaccination.ApiController
 {
     public class CountryController : System.Web.Http.ApiController
     {

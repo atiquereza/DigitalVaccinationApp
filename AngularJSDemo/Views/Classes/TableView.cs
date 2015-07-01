@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace AngularJSDemo.Views.Classes
+namespace DigitalVaccination.Views.Classes
 {
     public class TableView
     {

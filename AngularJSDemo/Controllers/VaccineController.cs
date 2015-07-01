@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AngularJSDemo.Libs;
+using DigitalVaccination.Libs;
 
-namespace AngularJSDemo.Controllers
+namespace DigitalVaccination.Controllers
 {
     public class VaccineController : Controller
     {

@@ -8,7 +8,7 @@ using System.Web;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public class DBGateway
     {

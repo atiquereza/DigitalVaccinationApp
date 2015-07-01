@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace AngularJSDemo
+namespace DigitalVaccination
 {
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {
-            System.Web.Mvc.ControllerBuilder.Current.DefaultNamespaces.Add("AngularJSDemo.ApiController");
+            System.Web.Mvc.ControllerBuilder.Current.DefaultNamespaces.Add("DigitalVaccination.ApiController");
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

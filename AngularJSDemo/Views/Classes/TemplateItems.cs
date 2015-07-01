@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using AngularJSDemo.Libs;
+using DigitalVaccination.Libs;
 
-namespace AngularJSDemo.Views.Classes
+namespace DigitalVaccination.Views.Classes
 {
     public static class TemplateItems
     {

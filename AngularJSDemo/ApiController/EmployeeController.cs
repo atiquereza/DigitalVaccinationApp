@@ -4,9 +4,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using AngularJSDemo.Models;
+using DigitalVaccination.Models;
 
-namespace AngularJSDemo.ApiController
+namespace DigitalVaccination.ApiController
 {
     public class EmployeeController : System.Web.Http.ApiController
     {

@@ -9,7 +9,7 @@ using System.Web;
 using Microsoft.Exchange.WebServices.Data;
 using Attachment = Microsoft.Exchange.WebServices.Data.Attachment;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public class Mailer
     {

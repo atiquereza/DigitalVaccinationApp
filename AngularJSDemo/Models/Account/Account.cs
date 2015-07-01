@@ -6,9 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-using AngularJSDemo.Libs;
+using DigitalVaccination.Libs;
 
-namespace AngularJSDemo.Models
+namespace DigitalVaccination.Models
 {
     public class Account
     {

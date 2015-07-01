@@ -5,10 +5,10 @@ using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AngularJSDemo.Libs;
-using AngularJSDemo.Models;
+using DigitalVaccination.Models;
+using DigitalVaccination.Libs;
 
-namespace AngularJSDemo.Controllers
+namespace DigitalVaccination.Controllers
 {
     public class HomeController : Controller
     {

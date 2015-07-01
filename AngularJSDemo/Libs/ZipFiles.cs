@@ -9,7 +9,7 @@ using Microsoft.Exchange.WebServices.Data;
 using Shell32;
 using Folder = Shell32.Folder;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public class ZipFiles
     {

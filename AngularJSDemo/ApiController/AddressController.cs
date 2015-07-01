@@ -5,10 +5,10 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using AngularJSDemo.Libs;
-using AngularJSDemo.Models;
+using DigitalVaccination.Libs;
+using DigitalVaccination.Models;
 
-namespace AngularJSDemo.ApiController
+namespace DigitalVaccination.ApiController
 {
     public class AddressController : System.Web.Http.ApiController
     {

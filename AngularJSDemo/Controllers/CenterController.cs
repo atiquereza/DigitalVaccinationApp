@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AngularJSDemo.Controllers
+namespace DigitalVaccination.Controllers
 {
     public class CenterController : Controller
     {

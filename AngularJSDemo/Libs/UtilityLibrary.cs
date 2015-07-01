@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public class UtilityLibrary
     {

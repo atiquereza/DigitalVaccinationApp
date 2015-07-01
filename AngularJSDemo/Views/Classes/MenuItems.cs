@@ -7,9 +7,9 @@ using System.Security.Policy;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using AngularJSDemo.Controllers;
+using DigitalVaccination.Controllers;
 
-using AngularJSDemo.Libs;
+using DigitalVaccination.Libs;
 
 namespace ManiacProject.Views.Classes
 {

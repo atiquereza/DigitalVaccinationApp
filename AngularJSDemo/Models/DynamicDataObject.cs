@@ -4,7 +4,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Web;
 
-namespace AngularJSDemo.Models
+namespace DigitalVaccination.Models
 {
     public class DynamicDataObject : DynamicObject
     {

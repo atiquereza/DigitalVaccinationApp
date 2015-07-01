@@ -5,10 +5,10 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.SessionState;
-using AngularJSDemo.Libs;
-using AngularJSDemo.Models;
+using DigitalVaccination.Libs;
+using DigitalVaccination.Models;
 
-namespace AngularJSDemo.Controllers
+namespace DigitalVaccination.Controllers
 {
     public class AccountController : Controller
     {

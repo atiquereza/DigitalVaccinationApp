@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using AngularJSDemo.Controllers;
+using DigitalVaccination.Controllers;
 
-namespace AngularJSDemo.Libs
+namespace DigitalVaccination.Libs
 {
     public class AuthenticateAttribute : FilterAttribute, IAuthorizationFilter
     {

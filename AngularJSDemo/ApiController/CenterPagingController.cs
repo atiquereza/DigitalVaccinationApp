@@ -6,11 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using AngularJSDemo.Controllers;
-using AngularJSDemo.Libs;
-using AngularJSDemo.Models;
+using DigitalVaccination.Controllers;
+using DigitalVaccination.Libs;
+using DigitalVaccination.Models;
 
-namespace AngularJSDemo.ApiController
+namespace DigitalVaccination.ApiController
 {
     public class CenterPagingController : System.Web.Http.ApiController
     {
