@@ -56,7 +56,7 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
                     location.href = "/User/Index";
                    // location.href = "/Center/Index";
                 }).error(function (data) {
-                    $scope.error = "An error has occured while deleting employee! " + data;
+                    $scope.error = "An error has occured while deleting User! " + data;
                 });
             };
         }
@@ -84,7 +84,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                 PermanentAddress: $scope.PermanentAddress,
                 PhoneNumber: $scope.PhoneNumber,
                 UserId: $scope.UserId,
-                UserName: $scope.UserName,
+                UserName: $scope.UserName
             };
             if ($scope.ID == 0) {
 
@@ -105,7 +105,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
 
         if ($routeParams.id) {
             $scope.form = {};
-            $scope.vaccinName = "Hellooo";
+            
             $http.get('/api/User/' + $routeParams.id).success(function (data) {
                 $scope.user = data;
                 $scope.ID = data.Id;
