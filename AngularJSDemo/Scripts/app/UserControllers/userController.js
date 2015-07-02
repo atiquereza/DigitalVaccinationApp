@@ -70,6 +70,30 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
         $scope.DatePublish = function () {
             console.log($scope.MyDate1);
         };
+
+        function errorHandle(data,exception) {
+            var errorMessage = "";
+            if (data.status === 0) {
+                errorMessage = 'Not connect.\n Verify Network.';
+            } else if (data.status == 404) {
+                errorMessage = 'Requested page not found. [404]';
+            } else if (data.status == 500) {
+                errorMessage = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                errorMessage = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                errorMessage = 'Time out error.';
+            } else if (exception === 'abort') {
+                errorMessage = 'Ajax request aborted.';
+            } else if (exception == 403) {
+                errorMessage = "UnAuthorized Access!!!";
+
+            }
+            else {
+                errorMessage = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            $scope.error = "An error has occured while Managing user!  " + errorMessage + " " + exception;
+        }
         $scope.isDate = false;
         $scope.ID = 0;
         $scope.save = function () {
@@ -90,23 +114,23 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
 
                 $http.post('/api/User/', obj).success(function (data) {
                     location.href = "/User/Index";
-                }).error(function (data) {
-                    $scope.error = "An error has occured while adding user! " + data.ExceptionMessage;
+                }).error(function (data,xhr) {
+                    $scope.error = "An error has occured while Managing user! " + data.status+ " "+xhr;
                 });
             }
             else {
                 $http.put('/api/User/', obj).success(function (data) {
                     location.href = "/User/Index";
-                }).error(function (data) {
-                    $scope.error = "An Error has occured while editing user! " + data.ExceptionMessage;
+                }).error(function (data, xhr) {
+                    $scope.error = "An Error has occured while Managing user! " + data.status +" "+xhr;
                 });
             }
         }
 
         if ($routeParams.id) {
             $scope.form = {};
-            
-            $http.get('/api/User/' + $routeParams.id).success(function (data) {
+
+            $http.get('/api/User/' + $routeParams.id).success(function(data) {
                 $scope.user = data;
                 $scope.ID = data.Id;
                 $scope.UserName = data.UserName;
@@ -127,10 +151,10 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                     console.log($scope.ID);
                     //location.href = "/User/Index";
                 }
-            }).error(function (data) {
-                $scope.error = "An error has occured while adding user! " + data.ExceptionMessage;
-              //  location.href = "/User/Index";
+            }).error(function (data, exception) {
+                errorHandle(data, exception);
             });
+        
         }
         else {
             $scope.title = "Create New User";

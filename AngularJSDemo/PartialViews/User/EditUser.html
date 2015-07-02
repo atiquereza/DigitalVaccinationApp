@@ -1,21 +1,22 @@
 ﻿<div class="row">
-   
+
     <div class="col-lg-12">
-     <h3>{{title}}</h3>
-   
+        <h3>{{title}}</h3>
+
         <ol class="breadcrumb">
             <li>
                 <i class="fa fa-user"></i> User Manegement
             </li>
             <li class="active" ng-bind="title">
-                <i></i> 
+                <i></i>
                 <!--ng-bind="'MyApp - ' + $root.title"-->
             </li>
         </ol>
     </div>
 </div>
-<form role="form" style="max-width: 500px;">
-    <strong class="error">{{ error }}</strong>
+<strong class="error label-warning">{{ error }}</strong>
+<form ng-hide="error" role="form" style="max-width: 500px;">
+   
     <div class="form-group">
         <label for="UserName">
             User Name :
