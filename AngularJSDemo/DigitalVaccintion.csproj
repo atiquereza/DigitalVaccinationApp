@@ -26,6 +26,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -190,9 +191,6 @@
     <Compile Include="Models\Centers.cs" />
     <Compile Include="Models\ChildInfo.cs" />
     <Compile Include="Models\Districts.cs" />
-    <Compile Include="Models\DynamicDataObject.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployeeDbContext.cs" />
     <Compile Include="Models\Thanas.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Models\Vaccin.cs" />

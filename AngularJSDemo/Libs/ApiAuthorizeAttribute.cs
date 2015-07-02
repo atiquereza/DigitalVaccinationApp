@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -38,8 +37,6 @@ namespace DigitalVaccination.Libs
 
                 actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Forbidden);
                 return;
-
-
             }
         }
 
