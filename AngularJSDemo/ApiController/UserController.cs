@@ -16,11 +16,12 @@ namespace DigitalVaccination.ApiController
     {
         DBGateway aGateway = new DBGateway();
         // GET api/<controller>
+        [ApiAuthorize]
         public UserInfo Get()
         {
            
 
-            string query = "select * from userinfo where id=1";
+            string query = "select * from userinfo";
             DataSet aSet = aGateway.Select(query);
 
             List<UserInfo> userInfos = new List<UserInfo>();
@@ -59,11 +60,9 @@ namespace DigitalVaccination.ApiController
             return aUserInfo;
         }
         
-        //[ApiAuthorize]
+        [ApiAuthorize]
         public UserInfo Get(int id)
         {  
-            
-
             string query = "select * from userinfo where id=@id;";
             Hashtable aTable = new Hashtable() { { "id", id } };
             DataSet aSet = aGateway.Select(query,aTable);

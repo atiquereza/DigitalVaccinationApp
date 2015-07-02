@@ -31,7 +31,7 @@ namespace DigitalVaccination.Libs
             if (Session != null)
             {
                 Dictionary<string, string> session = SessionHandler.GetSessionData(Session);
-                if(Authentication.ApiAuthenticate(session,Session))
+                if(Authentication.ApiAuthenticate(session,Session,actionContext))
                 {
                     return;
                 }

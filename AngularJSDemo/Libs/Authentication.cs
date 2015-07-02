@@ -103,7 +103,7 @@ namespace DigitalVaccination.Libs
         }
 
 
-        public static bool ApiAuthenticate(Dictionary<string, string> sessionData, HttpSessionStateBase Session)
+        public static bool ApiAuthenticate(Dictionary<string, string> sessionData, HttpSessionStateBase Session, System.Web.Http.Controllers.HttpActionContext actionContext)
         {
             string code = EncrDecrAction.Encrypt(
                            EncrDecrAction.Encrypt(EncrDecrAction.Encrypt(Session["UserId"].ToString(), true), true)
@@ -121,14 +121,17 @@ namespace DigitalVaccination.Libs
 
                 var routeValueDictionary = urlHelper.RequestContext.RouteData.Values;
                 string controller = routeValueDictionary["controller"].ToString();
-                string action = routeValueDictionary["action"].ToString();
+                string action = actionContext.Request.Method.ToString();
+
+                int argument = actionContext.Request.RequestUri.Segments.Count() - 3;
 
 
 
-                string query = "select * from appviews where LOWER(Controller) = LOWER(@Controller) and LOWER(Action) = LOWER(@Action) and " + sessionData["RoleName"] + "= 1";
+                string query = "select * from appviews where LOWER(Controller) = LOWER(@Controller) and LOWER(Action) = LOWER(@Action) and " + sessionData["RoleName"] + "= 1 and Argument=@Argument and ControllerType='api'";
                 Hashtable conditionTable = new Hashtable();
                 conditionTable["Controller"] = controller;
                 conditionTable["Action"] = action;
+                conditionTable["Argument"] = argument;
                 DBGateway aDbGateway = new DBGateway();
                 DataSet aDataSet = aDbGateway.Select(query, conditionTable);
                 if (aDataSet.Tables[0].Rows.Count > 0)
