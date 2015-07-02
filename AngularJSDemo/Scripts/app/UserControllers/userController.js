@@ -120,12 +120,16 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                 $scope.BirthCertificateID = data.BirthCertificateID;
                 $scope.UserId = data.UserId;
 
-                if (data.count > 0) {
+                if ($scope.ID) {
                     $scope.title = "Edit User";
                 } else {
                     $scope.title = "Create New User";
                     console.log($scope.ID);
+                    //location.href = "/User/Index";
                 }
+            }).error(function (data) {
+                $scope.error = "An error has occured while adding user! " + data.ExceptionMessage;
+              //  location.href = "/User/Index";
             });
         }
         else {
