@@ -112,9 +112,6 @@ C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.x
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
-G:\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll.config
-G:\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll
-G:\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.pdb
 G:\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
 G:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
 G:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
@@ -145,8 +142,6 @@ G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
 G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
 G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
 G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
-G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
-G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
@@ -182,3 +177,8 @@ D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.pdb
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb
+G:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll.config
+G:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.pdb
+G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
+G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb

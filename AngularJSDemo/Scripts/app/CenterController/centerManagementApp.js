@@ -21,17 +21,19 @@ CenterManagementApp.config(['$routeProvider', function ($routeProvider) {
         controller: 'DeleteCenterController'
     }).
     otherwise({
-        redirectTo: '/createCenter'
+        redirectTo: function () {
+            window.location.href = "/Center/Index";
+        }
     });
 
 }]);
 
 
-angular.element(document).ready(function () {
-    var myHtml = document.getElementById("Container");
-    angular.bootstrap(myHtml, ["CenterManagementApp"]);
+//angular.element(document).ready(function () {
+//    var myHtml = document.getElementById("Container");
+//    angular.bootstrap(myHtml, ["CenterManagementApp"]);
 
-});
+//});
 
 angular.element(document).ready(function () {
     var myHtml = document.getElementById("Container");

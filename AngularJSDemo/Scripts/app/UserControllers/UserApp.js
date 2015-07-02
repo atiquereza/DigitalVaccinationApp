@@ -32,7 +32,12 @@ UserApp.config(['$routeProvider', function ($routeProvider) {
             message: 'Delete User'
         }).
         otherwise({
-            redirectTo: '/ShowUserInv'
+            // redirectTo: '/ShowUserInv'
+            redirectTo: function () {
+                window.location.href = "/User/Index";
+
+
+            }
         });
 
 }]);
