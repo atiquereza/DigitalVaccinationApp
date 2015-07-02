@@ -1,11 +1,6 @@
 ﻿
 
 var UsersPagingApp = angular.module('UsersPagingApp', [
-    // Angular modules 
-
-    // Custom modules 
-
-    // 3rd Party Modules
     'restangular',
     'ngTable',
     'ngRoute'
@@ -20,7 +15,7 @@ angular.element(document).ready(function () {
 UsersPagingApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/ListUser', {
         templateUrl: '/PartialViews/User/ListUsers.html',
-        controller: 'UsersController'
+        controller: 'UserPagingController'
     }).
 
            

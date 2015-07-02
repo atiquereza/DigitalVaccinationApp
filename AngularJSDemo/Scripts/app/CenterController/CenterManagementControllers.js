@@ -97,8 +97,7 @@ CenterManagementControllers.controller("DeleteCenterController", ['$scope', '$ht
             $scope.delete = function () {
 
                 $http.delete('/api/Center/' + $scope.ID).success(function (data) {
-                    // $location.path('/listCenter');
-                    var url = '@Url.Action("Index", "Center")';
+                    
                     location.href = "/Center/Index";
                 }).error(function (data) {
                     $scope.error = "An error has occured while deleting Center! " + data;

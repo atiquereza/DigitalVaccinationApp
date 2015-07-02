@@ -16,7 +16,7 @@ namespace DigitalVaccination.ApiController
     {
         DBGateway aGateway = new DBGateway();
         // GET api/<controller>
-        [ApiAuthorize]
+        //[ApiAuthorize]
         public UserInfo Get()
         {
            
@@ -60,7 +60,7 @@ namespace DigitalVaccination.ApiController
             return aUserInfo;
         }
         
-        [ApiAuthorize]
+        //[ApiAuthorize]
         public UserInfo Get(int id)
         {  
             string query = "select * from userinfo where id=@id;";

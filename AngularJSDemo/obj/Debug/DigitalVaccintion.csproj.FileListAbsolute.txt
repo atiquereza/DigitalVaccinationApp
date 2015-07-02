@@ -147,9 +147,6 @@ G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
 G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
 G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
 G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
-D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll.config
-D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll
-D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.pdb
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
@@ -180,5 +177,8 @@ D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
 D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
-D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
-D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll.config
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.pdb
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb

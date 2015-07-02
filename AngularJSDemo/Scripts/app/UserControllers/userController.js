@@ -40,13 +40,11 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
 
                 if ($scope.Id) { // your question said "more than one element"
                     $scope.title = "Delete User";
-                    console.log($scope.Id);
                     return false;
                   
                 }
                 else {
                     $scope.title = "Invalid User";
-                    console.log($scope.Id);
                     return true;
                 }
             };
@@ -56,6 +54,7 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
                     var url = '@Url.Action("Index", "Home")';
                    // $location.url('/User/Index');
                     location.href = "/User/Index";
+                   // location.href = "/Center/Index";
                 }).error(function (data) {
                     $scope.error = "An error has occured while deleting employee! " + data;
                 });
@@ -71,18 +70,9 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
         $scope.DatePublish = function () {
             console.log($scope.MyDate1);
         };
-
-
         $scope.isDate = false;
-        
-
         $scope.ID = 0;
-
-
         $scope.save = function () {
-
-           
-
             var obj = {
                 BirthCertificateID: $scope.BirthCertificateID,
                 BirthDate: $scope.MyDate1,
@@ -99,18 +89,16 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
             if ($scope.ID == 0) {
 
                 $http.post('/api/User/', obj).success(function (data) {
-                    $location.path('/showuser');
+                    location.href = "/User/Index";
                 }).error(function (data) {
-                    $scope.error = "An error has occured while adding employee! " + data.ExceptionMessage;
+                    $scope.error = "An error has occured while adding user! " + data.ExceptionMessage;
                 });
             }
             else {
-                //alert($scope.ID);
                 $http.put('/api/User/', obj).success(function (data) {
-                    $location.path('/showuser');
+                    location.href = "/User/Index";
                 }).error(function (data) {
-                   // console.log(data);
-                    $scope.error = "An Error has occured while Saving customer! " + data.ExceptionMessage;
+                    $scope.error = "An Error has occured while editing user! " + data.ExceptionMessage;
                 });
             }
         }
