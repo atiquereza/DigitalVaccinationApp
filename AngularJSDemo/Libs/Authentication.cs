@@ -101,6 +101,48 @@ namespace DigitalVaccination.Libs
             return false;
 
         }
+
+
+        public static bool ApiAuthenticate(Dictionary<string, string> sessionData, HttpSessionStateBase Session, System.Web.Http.Controllers.HttpActionContext actionContext)
+        {
+            string code = EncrDecrAction.Encrypt(
+                           EncrDecrAction.Encrypt(EncrDecrAction.Encrypt(Session["UserId"].ToString(), true), true)
+                         + EncrDecrAction.Encrypt(EncrDecrAction.Encrypt(Session["UserRoleId"].ToString(), true), true)
+                         + EncrDecrAction.Encrypt(EncrDecrAction.Encrypt(Session["UserName"].ToString(), true), true)
+                         + EncrDecrAction.Encrypt(EncrDecrAction.Encrypt(Session["RoleName"].ToString(), true), true)
+                         + EncrDecrAction.Encrypt(EncrDecrAction.Encrypt(Session["ParentRoleName"].ToString(), true), true), true);
+
+
+
+
+            if (code == Session["SRES"].ToString())
+            {
+                UrlHelper urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
+
+                var routeValueDictionary = urlHelper.RequestContext.RouteData.Values;
+                string controller = routeValueDictionary["controller"].ToString();
+                string action = actionContext.Request.Method.ToString();
+
+                int argument = actionContext.Request.RequestUri.Segments.Count() - 3;
+
+
+
+                string query = "select * from appviews where LOWER(Controller) = LOWER(@Controller) and LOWER(Action) = LOWER(@Action) and " + sessionData["RoleName"] + "= 1 and Argument=@Argument and ControllerType='api'";
+                Hashtable conditionTable = new Hashtable();
+                conditionTable["Controller"] = controller;
+                conditionTable["Action"] = action;
+                conditionTable["Argument"] = argument;
+                DBGateway aDbGateway = new DBGateway();
+                DataSet aDataSet = aDbGateway.Select(query, conditionTable);
+                if (aDataSet.Tables[0].Rows.Count > 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+
+        }
     }
 
 

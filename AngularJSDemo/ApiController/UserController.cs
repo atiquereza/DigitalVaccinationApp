@@ -16,11 +16,12 @@ namespace DigitalVaccination.ApiController
     {
         DBGateway aGateway = new DBGateway();
         // GET api/<controller>
+        //[ApiAuthorize]
         public UserInfo Get()
         {
            
 
-            string query = "select * from userinfo where id=1";
+            string query = "select * from userinfo";
             DataSet aSet = aGateway.Select(query);
 
             List<UserInfo> userInfos = new List<UserInfo>();
@@ -59,14 +60,9 @@ namespace DigitalVaccination.ApiController
             return aUserInfo;
         }
         
-        [CustomAuthorize]
+        [ApiAuthorize]
         public UserInfo Get(int id)
         {  
-            HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
-            Dictionary<string, string> aDictionary = SessionHandler.GetSessionData(Session);
-            
-
-
             string query = "select * from userinfo where id=@id;";
             Hashtable aTable = new Hashtable() { { "id", id } };
             DataSet aSet = aGateway.Select(query,aTable);
@@ -106,14 +102,12 @@ namespace DigitalVaccination.ApiController
             aUserInfo.Childs = childList;
             return aUserInfo;
         }
-         [CustomAuthorize]
+
         // POST api/<controller>
         public HttpResponseMessage Put(UserInfo aUser)
         {
             if (ModelState.IsValid)
             {
-
-                //string query1 = "UPDATE userinfo SET VaccineName=@name, StartDay=@start_day, EndDay=@end_time,Description=@description WHERE  ID=@id;";
                 string query = "UPDATE `tikaappdb`.`userinfo` SET `UserName`=@userName, `FullName`=@fullName, `FatherName`=@fathersName, `MotherName`=@mothersName, `CellNumber`=@phoneNumber, `BirthDay`=@birthdate, `CurrentAddress`=@currentAddress, `PermanentAddress`=@permanentAddress, `BirthCertificateID`=@birthCertificate WHERE  `ID`=@id;";
                 Hashtable aHashtable = new Hashtable();
                 aHashtable.Add("fullName", aUser.FullName);
@@ -136,17 +130,12 @@ namespace DigitalVaccination.ApiController
             }
         }
 
-         [CustomAuthorize]
+
         // PUT api/<controller>/5
         public HttpResponseMessage Post(UserInfo aUser)
         {
             if (ModelState.IsValid)
             {
-                //db.Employees.Add(model);
-                //db.SaveChanges();
-
-
-                //string query = "INSERT INTO vaccineinfo (VaccineName, StartDay, EndDay,Description) VALUES (@name, @start_day, @end_day,@description);";
                 string query = "INSERT INTO `tikaappdb`.`userinfo` (`UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES (@UserID, @UserName, @FullName, @FatherName, @MotherName, @CellNumber, @BirthDay, @CurrentAddress, @PermanentAddress, @BirthCertificateID);";
                 Hashtable aHashtable = new Hashtable();
                 aHashtable.Add("id", aUser.Id);
@@ -172,8 +161,9 @@ namespace DigitalVaccination.ApiController
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
             }
         }
-         [CustomAuthorize]
+
         // DELETE api/<controller>/5
+
         public HttpResponseMessage Delete(int id)
         {
             string query = "DELETE FROM `tikaappdb`.`userinfo` WHERE  `ID`=" + id + ";";

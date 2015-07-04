@@ -2,15 +2,12 @@
     'ngRoute',
     'UserControllers'
 ]);
-//angular.bootstrap(document.getElementById("Container"), ["UserApp"]);
 
 angular.element(document).ready(function () {
     var myHtml = document.getElementById("Container");
     angular.bootstrap(myHtml, ["UserApp"]);
 
 });
-
-
 
 UserApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/showuser', {
@@ -35,12 +32,12 @@ UserApp.config(['$routeProvider', function ($routeProvider) {
             message: 'Delete User'
         }).
         otherwise({
-            redirectTo: '/ShowUserInv'
+            // redirectTo: '/ShowUserInv'
+            redirectTo: function () {
+                window.location.href = "/User/Index";
+
+
+            }
         });
 
-}]);
-UserApp.run(['$rootScope', '$route', function ($rootScope, $route) {
-    $rootScope.$on('$routeChangeSuccess', function () {
-        $rootScope.message = $route.current.message;
-    });
 }]);

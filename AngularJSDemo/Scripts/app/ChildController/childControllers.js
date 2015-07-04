@@ -1,9 +1,9 @@
-﻿var UserControllers = angular.module("UserControllers", ['ui.bootstrap', 'ng-bs3-datepicker']);
+﻿var childControllers = angular.module("ChildModule", ['ui.bootstrap', 'ng-bs3-datepicker']);
 
 
 // this controller call the api method and display the list of employees
 // in list.html
-UserControllers.controller("UserShowController", ['$scope', '$http',
+childControllers.controller("UserShowController", ['$scope', '$http',
     function ($scope, $http) {
         $scope.isThingsCollapsed = false;
         $http.get('/api/User').success(function (data) {
@@ -17,10 +17,10 @@ UserControllers.controller("UserShowController", ['$scope', '$http',
 
 // this controller call the api method and display the record of selected employee
 // in delete.html and provide an option for delete
-UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routeParams', '$location',
+childControllers.controller("DeleteUserController", ['$scope', '$http', '$routeParams', '$location',
         function ($scope, $http, $routeParams, $location) {
             $scope.user = {};
-           // $scope.id = $routeParams.id;
+            // $scope.id = $routeParams.id;
             $http.get('/api/User/' + $routeParams.id).success(function (data) {
                 $scope.user = data;
                 $scope.Id = data.Id;
@@ -35,13 +35,13 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
                 $scope.BirthCertificateID = data.BirthCertificateID;
                 $scope.UserId = data.UserId;
             });
-         
+
             $scope.ValidUser = function () {
 
                 if ($scope.Id) { // your question said "more than one element"
                     $scope.title = "Delete User";
                     return false;
-                  
+
                 }
                 else {
                     $scope.title = "Invalid User";
@@ -52,9 +52,9 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
             $scope.delete = function () {
                 $http.delete('/api/User/' + $scope.Id).success(function (data) {
                     var url = '@Url.Action("Index", "Home")';
-                   // $location.url('/User/Index');
+                    // $location.url('/User/Index');
                     location.href = "/User/Index";
-                   // location.href = "/Center/Index";
+                    // location.href = "/Center/Index";
                 }).error(function (data) {
                     $scope.error = "An error has occured while deleting User! " + data;
                 });
@@ -64,14 +64,14 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
 
 // this controller call the api method and display the record of selected employee
 // in edit.html and provide an option for create and modify the employee and save the employee record
-UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', '$routeParams', '$location',
+childControllers.controller("EditAddChildController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
         $scope.DOB = $filter('date')(new Date(), 'yyyy/MM/dd');
         $scope.DatePublish = function () {
-            console.log($scope.DOB);
+            alert($scope.DOB);
         };
 
-        function errorHandle(data,exception) {
+        function errorHandle(data, exception) {
             var errorMessage = "";
             if (data.status === 0) {
                 errorMessage = 'Not connect.\n Verify Network.';
@@ -114,15 +114,15 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
 
                 $http.post('/api/User/', obj).success(function (data) {
                     location.href = "/User/Index";
-                }).error(function (data,xhr) {
-                    $scope.error = "An error has occured while Managing user! " + data.status+ " "+xhr;
+                }).error(function (data, xhr) {
+                    $scope.error = "An error has occured while Managing user! " + data.status + " " + xhr;
                 });
             }
             else {
                 $http.put('/api/User/', obj).success(function (data) {
                     location.href = "/User/Index";
                 }).error(function (data, xhr) {
-                    $scope.error = "An Error has occured while Managing user! " + data.status +" "+xhr;
+                    $scope.error = "An Error has occured while Managing user! " + data.status + " " + xhr;
                 });
             }
         }
@@ -130,7 +130,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
         if ($routeParams.id) {
             $scope.form = {};
 
-            $http.get('/api/User/' + $routeParams.id).success(function(data) {
+            $http.get('/api/User/' + $routeParams.id).success(function (data) {
                 $scope.user = data;
                 $scope.ID = data.Id;
                 $scope.UserName = data.UserName;
@@ -154,7 +154,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
             }).error(function (data, exception) {
                 errorHandle(data, exception);
             });
-        
+
         }
         else {
             $scope.title = "Create New User";
