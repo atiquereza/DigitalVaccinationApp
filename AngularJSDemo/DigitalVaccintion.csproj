@@ -160,6 +160,7 @@
     <Compile Include="ApiController\AddressController.cs" />
     <Compile Include="ApiController\CenterController.cs" />
     <Compile Include="ApiController\CenterPagingController.cs" />
+    <Compile Include="ApiController\ChildController.cs" />
     <Compile Include="ApiController\UsersPagingController.cs" />
     <Compile Include="ApiController\QuerySortingExtensions.cs" />
     <Compile Include="ApiController\UserController.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CenterController.cs" />
+    <Compile Include="Controllers\ChildController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagedResult.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -388,7 +390,6 @@
     <Content Include="PartialViews\Center\DeleteCenter.html" />
     <Content Include="PartialViews\Center\EditCenter.html" />
     <Content Include="PartialViews\Center\ListCenters.html" />
-    <Content Include="PartialViews\Child\AddChild.html" />
     <Content Include="PartialViews\Child\ChildInfo.html" />
     <Content Include="PartialViews\Child\EditChild.html" />
     <Content Include="PartialViews\User\DeleteUser.html" />
@@ -410,6 +411,8 @@
     <Content Include="Scripts\app\CenterController\centerListController.js" />
     <Content Include="Scripts\app\CenterController\centerManagementApp.js" />
     <Content Include="Scripts\app\CenterController\centerManagementControllers.js" />
+    <Content Include="Scripts\app\ChildController\childApp.js" />
+    <Content Include="Scripts\app\ChildController\childControllers.js" />
     <Content Include="Scripts\app\VaccinControllers\app.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -484,7 +487,6 @@
     <Content Include="Scripts\restangular.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.11.0.js" />
     <Content Include="Scripts\underscore-min.js" />
-    <Content Include="Views\Shared\ChildInfo.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -493,7 +495,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Scripts\jquery-1.9.1.min.map" />
-    <Content Include="Views\Home\ShowUser.cshtml" />
     <Content Include="Views\Home\ChildInfo.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout_Admin.cshtml" />
@@ -503,13 +504,14 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Vaccine\Test.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\Vaccine\Index.cshtml" />
     <Content Include="Views\Center\Index.cshtml" />
     <Content Include="Views\Center\EditCenter.cshtml" />
     <Content Include="Views\Shared\_Layout_General_Users.cshtml" />
+    <Content Include="Views\Child\Index.cshtml" />
+    <Content Include="Views\Child\EditChild.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -543,7 +545,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5304</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5110/</IISUrl>
+          <IISUrl>http://localhost:5090/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

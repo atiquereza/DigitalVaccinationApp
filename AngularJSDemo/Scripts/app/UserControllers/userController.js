@@ -29,7 +29,7 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
                 $scope.FatherName = data.FatherName;
                 $scope.MotherName = data.MotherName;
                 $scope.PhoneNumber = data.PhoneNumber;
-                $scope.MyDate1 = moment(data.BirthDate).format('YYYY/MM/DD');
+                $scope.DOB = moment(data.BirthDate).format('YYYY/MM/DD');
                 $scope.CurrentAddress = data.CurrentAddress;
                 $scope.PermanentAddress = data.PermanentAddress;
                 $scope.BirthCertificateID = data.BirthCertificateID;
@@ -66,9 +66,9 @@ UserControllers.controller("DeleteUserController", ['$scope', '$http', '$routePa
 // in edit.html and provide an option for create and modify the employee and save the employee record
 UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
-        $scope.MyDate1 = $filter('date')(new Date(), 'yyyy/MM/dd');
+        $scope.DOB = $filter('date')(new Date(), 'yyyy/MM/dd');
         $scope.DatePublish = function () {
-            console.log($scope.MyDate1);
+            console.log($scope.DOB);
         };
 
         function errorHandle(data,exception) {
@@ -99,7 +99,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
         $scope.save = function () {
             var obj = {
                 BirthCertificateID: $scope.BirthCertificateID,
-                BirthDate: $scope.MyDate1,
+                BirthDate: $scope.DOB,
                 CurrentAddress: $scope.CurrentAddress,
                 FatherName: $scope.FatherName,
                 FullName: $scope.FullName,
@@ -138,7 +138,7 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                 $scope.FatherName = data.FatherName;
                 $scope.MotherName = data.MotherName;
                 $scope.PhoneNumber = data.PhoneNumber;
-                $scope.MyDate1 = moment(data.BirthDate).format('YYYY/MM/DD');
+                $scope.DOB = moment(data.BirthDate).format('YYYY/MM/DD');
                 $scope.CurrentAddress = data.CurrentAddress;
                 $scope.PermanentAddress = data.PermanentAddress;
                 $scope.BirthCertificateID = data.BirthCertificateID;

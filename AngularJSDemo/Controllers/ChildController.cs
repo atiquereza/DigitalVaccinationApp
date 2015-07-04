@@ -6,18 +6,17 @@ using System.Web.Mvc;
 
 namespace DigitalVaccination.Controllers
 {
-    public class CenterController : Controller
+    public class ChildController : Controller
     {
         //
         // GET: /Center/
 
         public ActionResult Index()
         {
-
             return View();
         }
 
-        public ActionResult EditCenter()
+        public ActionResult EditChild()
         {
             return View();
         }

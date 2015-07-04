@@ -29,12 +29,6 @@ CenterManagementApp.config(['$routeProvider', function ($routeProvider) {
 }]);
 
 
-//angular.element(document).ready(function () {
-//    var myHtml = document.getElementById("Container");
-//    angular.bootstrap(myHtml, ["CenterManagementApp"]);
-
-//});
-
 angular.element(document).ready(function () {
     var myHtml = document.getElementById("Container");
     angular.bootstrap(myHtml, ["CenterManagementApp"]);

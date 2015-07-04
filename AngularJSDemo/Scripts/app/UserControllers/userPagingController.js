@@ -59,7 +59,7 @@ UsersPagingApp.controller("UserPagingController", [
         $scope.save = function () {
             var obj = {
                 BirthCertificateID: $scope.BirthCertificateID,
-                BirthDate: $scope.MyDate1,
+                BirthDate: $scope.DOB,
                 CurrentAddress: $scope.CurrentAddress,
                 FatherName: $scope.FatherName,
                 FullName: $scope.FullName,
@@ -104,7 +104,7 @@ UsersPagingApp.controller("UserPagingController", [
                 $scope.FatherName = data.FatherName;
                 $scope.MotherName = data.MotherName;
                 $scope.PhoneNumber = data.PhoneNumber;
-                $scope.MyDate1 = moment(data.BirthDate).format('YYYY/MM/DD');
+                $scope.DOB = moment(data.BirthDate).format('YYYY/MM/DD');
                 $scope.CurrentAddress = data.CurrentAddress;
                 $scope.PermanentAddress = data.PermanentAddress;
                 $scope.BirthCertificateID = data.BirthCertificateID;

@@ -100,13 +100,6 @@ TikaControllers.controller("DeleteController", ['$scope', '$http', '$routeParams
 TikaControllers.controller("EditController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
 
-        //$scope.formData.dp = []; // arrays of yours datepicker models
-        //$('#datetimepicker1').datepicker().on('changeDate', function (ev) {
-        //    console.log("1");
-        //    $scope.formData.dp[$(ev.target).attr('dp-model')] = $(ev.target).val();
-        //    console.log($scope.formData.dp);
-        //});
-
         $scope.ID = 0;
 
         $scope.save = function () {
@@ -131,7 +124,7 @@ TikaControllers.controller("EditController", ['$scope', '$filter', '$http', '$ro
                 });
             }
             else {
-                //alert($scope.ID);
+              
                 $http.put('/api/Vaccination/', obj).success(function (data) {
                     $location.path('/list');
                 }).error(function (data) {
