@@ -3,7 +3,7 @@
 
 // this controller call the api method and display the list of employees
 // in list.html
-childControllers.controller("UserShowController", ['$scope', '$http',
+childControllers.controller("UserChildController", ['$scope', '$http',
     function ($scope, $http) {
         $scope.isThingsCollapsed = false;
         $http.get('/api/User').success(function (data) {
@@ -17,7 +17,7 @@ childControllers.controller("UserShowController", ['$scope', '$http',
 
 // this controller call the api method and display the record of selected employee
 // in delete.html and provide an option for delete
-childControllers.controller("DeleteUserController", ['$scope', '$http', '$routeParams', '$location',
+childControllers.controller("DeleteChildController", ['$scope', '$http', '$routeParams', '$location',
         function ($scope, $http, $routeParams, $location) {
             $scope.user = {};
             // $scope.id = $routeParams.id;
