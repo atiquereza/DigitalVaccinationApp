@@ -1,0 +1,256 @@
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\AngularJSDemo.dll.config
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\AngularJSDemo.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\AngularJSDemo.pdb
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\Antlr3.Runtime.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\EntityFramework.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\EPPlus.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\Microsoft.Exchange.WebServices.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\MySql.Data.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\MySqlBackup.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\Newtonsoft.Json.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Linq.Dynamic.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Helpers.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Http.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Http.WebHost.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Mvc.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Optimization.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Providers.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Razor.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.WebPages.Deployment.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.WebPages.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.WebPages.Razor.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\WebGrease.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\EntityFramework.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\EntityFramework.SqlServer.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\Microsoft.Exchange.WebServices.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\Newtonsoft.Json.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Net.Http.Formatting.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Helpers.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Http.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Http.WebHost.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Mvc.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.Razor.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.WebPages.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
+F:\ \tika_app\ApnarSishuKtikaDin-master_27062015\Angular\DVapp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
+D:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
+D:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
+D:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
+D:\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll.config
+D:\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.pdb
+D:\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\MySql.Data.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Optimization.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Providers.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\WebGrease.dll
+D:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Exchange.WebServices.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
+D:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\obj\Debug\AngularJSDemo.pdb
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll.config
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\AngularJSDemo.pdb
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\MySql.Data.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Optimization.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Providers.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\WebGrease.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Exchange.WebServices.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Optimization.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Providers.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\WebGrease.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
+G:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
+G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Optimization.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Providers.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\WebGrease.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll.config
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.pdb
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
+D:\GitZ\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb
+G:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll.config
+G:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll
+G:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.pdb
+G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
+G:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb
+E:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll.config
+E:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\DigitalVaccination.pdb
+E:\DigitalVaccinationApp\AngularJSDemo\bin\Antlr3.Runtime.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\Microsoft.Web.Infrastructure.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Optimization.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Providers.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\WebGrease.dll
+E:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\EntityFramework.SqlServer.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\Newtonsoft.Json.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Net.Http.Formatting.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Helpers.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Http.WebHost.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Mvc.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.Razor.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Deployment.xml
+E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
+E:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
+E:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
+E:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccination.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccination.pdb
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\DigitalVaccination.dll.config
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\DigitalVaccination.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\DigitalVaccination.pdb
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Antlr3.Runtime.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\EntityFramework.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\EntityFramework.SqlServer.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\MySql.Data.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Newtonsoft.Json.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Net.Http.Formatting.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Helpers.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Http.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Http.WebHost.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Mvc.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Optimization.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Providers.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Razor.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.Deployment.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.Razor.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\WebGrease.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\EntityFramework.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\EntityFramework.SqlServer.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Microsoft.Exchange.WebServices.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Newtonsoft.Json.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Net.Http.Formatting.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Helpers.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Http.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Http.WebHost.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Mvc.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Razor.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.Deployment.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.Razor.xml
