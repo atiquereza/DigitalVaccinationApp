@@ -217,9 +217,6 @@ E:\DigitalVaccinationApp\AngularJSDemo\bin\System.Web.WebPages.Razor.xml
 E:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
 E:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.dll
 E:\DigitalVaccinationApp\AngularJSDemo\obj\Debug\DigitalVaccination.pdb
-C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccintion.csprojResolveAssemblyReference.cache
-C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccination.dll
-C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccination.pdb
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\DigitalVaccination.dll.config
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\DigitalVaccination.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\DigitalVaccination.pdb
@@ -243,7 +240,6 @@ C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.We
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\WebGrease.dll
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\EntityFramework.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\EntityFramework.SqlServer.xml
-C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Microsoft.Exchange.WebServices.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\Newtonsoft.Json.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Net.Http.Formatting.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Helpers.xml
@@ -254,3 +250,5 @@ C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.Ra
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.Deployment.xml
 C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\bin\System.Web.WebPages.Razor.xml
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccination.dll
+C:\Users\home\Desktop\DigitalVaccinationApp\DigitalVaccination\obj\Debug\DigitalVaccination.pdb
