@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for tikaappdb
-DROP DATABASE IF EXISTS `tikaappdb`;
 CREATE DATABASE IF NOT EXISTS `tikaappdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `tikaappdb`;
 
 
 -- Dumping structure for table tikaappdb.appmenuitems
-DROP TABLE IF EXISTS `appmenuitems`;
 CREATE TABLE IF NOT EXISTS `appmenuitems` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `MenuName` varchar(50) DEFAULT '0',
@@ -42,7 +40,6 @@ INSERT INTO `appmenuitems` (`id`, `MenuName`, `MenuParentName`, `AppViewId`, `Me
 
 
 -- Dumping structure for table tikaappdb.appviews
-DROP TABLE IF EXISTS `appviews`;
 CREATE TABLE IF NOT EXISTS `appviews` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Controller` varchar(100) NOT NULL DEFAULT '0',
@@ -56,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `appviews` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.appviews: ~5 rows (approximately)
+-- Dumping data for table tikaappdb.appviews: ~6 rows (approximately)
 DELETE FROM `appviews`;
 /*!40000 ALTER TABLE `appviews` DISABLE KEYS */;
 INSERT INTO `appviews` (`ID`, `Controller`, `ControllerType`, `Action`, `Argument`, `SuperAdmin`, `Admin`, `Manager`, `ViewUser`) VALUES
@@ -70,7 +67,6 @@ INSERT INTO `appviews` (`ID`, `Controller`, `ControllerType`, `Action`, `Argumen
 
 
 -- Dumping structure for table tikaappdb.centers
-DROP TABLE IF EXISTS `centers`;
 CREATE TABLE IF NOT EXISTS `centers` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ThanasID` int(11) DEFAULT '0',
@@ -79,9 +75,9 @@ CREATE TABLE IF NOT EXISTS `centers` (
   PRIMARY KEY (`ID`),
   KEY `FKthanasID` (`ThanasID`),
   CONSTRAINT `FKthanasID` FOREIGN KEY (`ThanasID`) REFERENCES `thanas` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.centers: ~5 rows (approximately)
+-- Dumping data for table tikaappdb.centers: ~6 rows (approximately)
 DELETE FROM `centers`;
 /*!40000 ALTER TABLE `centers` DISABLE KEYS */;
 INSERT INTO `centers` (`ID`, `ThanasID`, `CentersName`, `CentersAddress`) VALUES
@@ -89,12 +85,12 @@ INSERT INTO `centers` (`ID`, `ThanasID`, `CentersName`, `CentersAddress`) VALUES
 	(2, 407, 'jjkj', 'ooo'),
 	(3, 192, 'fgh', '0gh'),
 	(4, 354, 'hgjhyjh', 'ghfghfg'),
-	(5, 287, 'center1', 'jhhjhjkh');
+	(5, 287, 'center1', 'jhhjhjkh'),
+	(6, 1, 'testCenter', 'South Kafrul');
 /*!40000 ALTER TABLE `centers` ENABLE KEYS */;
 
 
 -- Dumping structure for table tikaappdb.child
-DROP TABLE IF EXISTS `child`;
 CREATE TABLE IF NOT EXISTS `child` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserloginID` int(11) NOT NULL DEFAULT '0',
@@ -114,7 +110,6 @@ DELETE FROM `child`;
 
 
 -- Dumping structure for table tikaappdb.childinfo
-DROP TABLE IF EXISTS `childinfo`;
 CREATE TABLE IF NOT EXISTS `childinfo` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ParentID` int(11) NOT NULL DEFAULT '0',
@@ -136,7 +131,6 @@ INSERT INTO `childinfo` (`ID`, `ParentID`, `Name`, `Birthdate`, `BirthCertificat
 
 
 -- Dumping structure for table tikaappdb.childvaccin
-DROP TABLE IF EXISTS `childvaccin`;
 CREATE TABLE IF NOT EXISTS `childvaccin` (
   `ID` int(11) NOT NULL,
   `ChildID` int(11) DEFAULT NULL,
@@ -157,7 +151,6 @@ DELETE FROM `childvaccin`;
 
 
 -- Dumping structure for table tikaappdb.disease
-DROP TABLE IF EXISTS `disease`;
 CREATE TABLE IF NOT EXISTS `disease` (
   `ID` int(11) NOT NULL,
   `DiseaseName` varchar(50) NOT NULL,
@@ -172,7 +165,6 @@ DELETE FROM `disease`;
 
 
 -- Dumping structure for table tikaappdb.districts
-DROP TABLE IF EXISTS `districts`;
 CREATE TABLE IF NOT EXISTS `districts` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DistrictsName` varchar(50) NOT NULL,
@@ -252,7 +244,6 @@ INSERT INTO `districts` (`ID`, `DistrictsName`, `DistrictsPopulation`) VALUES
 
 
 -- Dumping structure for table tikaappdb.employees
-DROP TABLE IF EXISTS `employees`;
 CREATE TABLE IF NOT EXISTS `employees` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) DEFAULT NULL,
@@ -260,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=601 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.employees: ~757 rows (approximately)
+-- Dumping data for table tikaappdb.employees: ~425 rows (approximately)
 DELETE FROM `employees`;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
 INSERT INTO `employees` (`id`, `firstName`, `lastName`) VALUES
@@ -858,7 +849,6 @@ INSERT INTO `employees` (`id`, `firstName`, `lastName`) VALUES
 
 
 -- Dumping structure for table tikaappdb.featuredetails
-DROP TABLE IF EXISTS `featuredetails`;
 CREATE TABLE IF NOT EXISTS `featuredetails` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `FeatureSummaryID` int(11) NOT NULL DEFAULT '0',
@@ -882,7 +872,6 @@ DELETE FROM `featuredetails`;
 
 
 -- Dumping structure for table tikaappdb.featureimplementation
-DROP TABLE IF EXISTS `featureimplementation`;
 CREATE TABLE IF NOT EXISTS `featureimplementation` (
   `ID` int(11) NOT NULL,
   `ChildID` int(11) NOT NULL,
@@ -907,7 +896,6 @@ DELETE FROM `featureimplementation`;
 
 
 -- Dumping structure for table tikaappdb.featuresummary
-DROP TABLE IF EXISTS `featuresummary`;
 CREATE TABLE IF NOT EXISTS `featuresummary` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `FeatureName` varchar(50) NOT NULL DEFAULT '0',
@@ -921,7 +909,6 @@ DELETE FROM `featuresummary`;
 
 
 -- Dumping structure for table tikaappdb.menuitems
-DROP TABLE IF EXISTS `menuitems`;
 CREATE TABLE IF NOT EXISTS `menuitems` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MenuName` varchar(50) NOT NULL,
@@ -941,7 +928,6 @@ DELETE FROM `menuitems`;
 
 
 -- Dumping structure for table tikaappdb.roles
-DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `RoleName` varchar(200) NOT NULL,
@@ -961,7 +947,6 @@ INSERT INTO `roles` (`ID`, `RoleName`, `ParentRoleName`) VALUES
 
 
 -- Dumping structure for table tikaappdb.thanas
-DROP TABLE IF EXISTS `thanas`;
 CREATE TABLE IF NOT EXISTS `thanas` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DistrictsID` int(11) NOT NULL DEFAULT '0',
@@ -971,7 +956,7 @@ CREATE TABLE IF NOT EXISTS `thanas` (
   CONSTRAINT `FKdistrictsID` FOREIGN KEY (`DistrictsID`) REFERENCES `districts` (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=512 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.thanas: ~413 rows (approximately)
+-- Dumping data for table tikaappdb.thanas: ~611 rows (approximately)
 DELETE FROM `thanas`;
 /*!40000 ALTER TABLE `thanas` DISABLE KEYS */;
 INSERT INTO `thanas` (`ID`, `DistrictsID`, `ThanasName`) VALUES
@@ -1490,7 +1475,6 @@ INSERT INTO `thanas` (`ID`, `DistrictsID`, `ThanasName`) VALUES
 
 
 -- Dumping structure for table tikaappdb.userinfo
-DROP TABLE IF EXISTS `userinfo`;
 CREATE TABLE IF NOT EXISTS `userinfo` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
@@ -1508,15 +1492,14 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   CONSTRAINT `UserID` FOREIGN KEY (`UserID`) REFERENCES `users` (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.userinfo: ~88 rows (approximately)
+-- Dumping data for table tikaappdb.userinfo: ~87 rows (approximately)
 DELETE FROM `userinfo`;
 /*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
 INSERT INTO `userinfo` (`ID`, `UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES
-	(1, 4, 'jubayer', 'All Jubayer Mohammad Mahamudunnabi.', 'Md. Fazlur Rahman.', 'Momotaz Begum.', '01926662274', '1984-10-31', 'Dhaka.', 'Dinajpur', '22222222'),
+	(1, 4, 'jubayer', 'All Jubayer Mohammad Mahamudunnabi.', 'Md. Fazlur Rahman.', 'Momotaz Begum.', '01926662274', '1984-08-01', 'Dhaka.', 'Dinajpur', '22222222'),
 	(2, 10, 'arosh', 'arosh', 'Habibunnobi Md Arifur Rahman', 'Arobi', '01926662227', '2015-03-01', 'Dhaka', 'Dinajpur', '222222222222222'),
-	(3, 20, 'Cyrus', 'Galvin Schneider', 'Blake English', 'Francesca Crosby', '01 28 18 98 35', '1956-06-11', 'Norfolk', 'Hody', '4852236716030161'),
-	(4, 21, 'Garrison', 'Ethan Reid', 'Garrison Waller', 'Serena Nixon', '09 80 12 98 81', '1956-06-11', 'Vancouver', 'Dessel', '4250555025180805'),
-	(5, 22, 'Fulton', 'Oleg Walton', 'Michael Olsen', 'Jessica Mcgowan', '06 13 50 32 99', '1956-06-11', 'Sant\'Agata Bolognese', 'Zutendaal', '4838068198366095'),
+	(3, 20, 'Cyrus', 'Galvin Schneider', 'Blake English bangla', 'Francesca Crosby', '01 28 18 98 35', '1956-06-11', 'Norfolk', 'Hody', '4852236716030161'),
+	(5, 22, 'Fulton', 'Oleg Walton', 'Michael Olsen', 'Jessica Mcgowan', '06 13 50 32 00', '1956-06-11', 'Sant\'Agata Bolognese', 'Zutendaal', '4838068198366095'),
 	(6, 23, 'Byron', 'Orlando Nguyen', 'Dean Britt', 'April Gregory', '07 11 98 95 30', '1956-06-11', 'Landshut', 'Hillsboro', '4667349228961396'),
 	(7, 24, 'Quentin', 'Ira Wise', 'Odysseus Perkins', 'Lysandra Doyle', '08 29 01 12 27', '1956-06-11', 'Mont', 'Bon Accord', '4318110878160229'),
 	(8, 25, 'Perry', 'Alvin Sharpe', 'Ezekiel Buchanan', 'Aurora Kirkland', '04 13 37 82 14', '1956-06-11', 'Forres', 'Amersfoort', '4287925789505241'),
@@ -1604,7 +1587,6 @@ INSERT INTO `userinfo` (`ID`, `UserID`, `UserName`, `FullName`, `FatherName`, `M
 
 
 -- Dumping structure for table tikaappdb.userlogin
-DROP TABLE IF EXISTS `userlogin`;
 CREATE TABLE IF NOT EXISTS `userlogin` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '0',
@@ -1624,7 +1606,6 @@ DELETE FROM `userlogin`;
 
 
 -- Dumping structure for table tikaappdb.users
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserName` varchar(50) NOT NULL,
@@ -1746,7 +1727,6 @@ INSERT INTO `users` (`ID`, `UserName`, `UserCellNumber`, `UserRoleId`) VALUES
 
 
 -- Dumping structure for table tikaappdb.vaccineinfo
-DROP TABLE IF EXISTS `vaccineinfo`;
 CREATE TABLE IF NOT EXISTS `vaccineinfo` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `VaccineName` varchar(50) NOT NULL DEFAULT '0',
