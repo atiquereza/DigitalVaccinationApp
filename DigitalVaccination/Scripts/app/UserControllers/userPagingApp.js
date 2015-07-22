@@ -16,10 +16,7 @@ UsersPagingApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/ListUser', {
         templateUrl: '/PartialViews/User/ListUsers.html',
         controller: 'UserPagingController'
-    }).
-
-           
-        otherwise({
+    }).otherwise({
             redirectTo: '/ListUser'
         });
 

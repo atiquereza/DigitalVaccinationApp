@@ -20,6 +20,10 @@ namespace DigitalVaccination.Controllers
         {
             return View();
         }
+        public ActionResult ViewChild()
+        {
+            return View();
+        }
 
     }
 }

@@ -60,7 +60,7 @@ namespace DigitalVaccination.ApiController
             return aUserInfo;
         }
         
-        [ApiAuthorize]
+        //[ApiAuthorize]
         public UserInfo Get(int id)
         {  
             string query = "select * from userinfo where id=@id;";

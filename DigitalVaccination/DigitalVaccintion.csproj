@@ -392,6 +392,7 @@
     <Content Include="PartialViews\Center\ListCenters.html" />
     <Content Include="PartialViews\Child\ChildInfo.html" />
     <Content Include="PartialViews\Child\EditChild.html" />
+    <Content Include="PartialViews\Child\ViewChild.html" />
     <Content Include="PartialViews\User\DeleteUser.html" />
     <Content Include="PartialViews\User\EditUser.html" />
     <Content Include="PartialViews\User\ListUsers.html" />
@@ -512,6 +513,7 @@
     <Content Include="Views\Shared\_Layout_General_Users.cshtml" />
     <Content Include="Views\Child\Index.cshtml" />
     <Content Include="Views\Child\EditChild.cshtml" />
+    <Content Include="Views\Child\ViewChild.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -545,7 +547,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5304</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5090/</IISUrl>
+          <IISUrl>http://localhost:6097/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

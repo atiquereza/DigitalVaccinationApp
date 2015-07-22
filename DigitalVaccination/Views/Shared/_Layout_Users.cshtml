@@ -45,6 +45,10 @@
     <script src="@Url.Content("~/Scripts/moment.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/ng-bs3-datepicker.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/ui-bootstrap-tpls-0.11.0.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/app/ChildController/childApp.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/app/ChildController/childControllers.js")" type="text/javascript"></script>
+
+
     @RenderSection("AngularModule", required: false)
     <!-- Bootstrap Core JavaScript -->
     <!-- Morris Charts JavaScript -->
@@ -179,20 +183,18 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="user-dashbord.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/Child/Index#/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
                         <a href="/Child/EditChild#/addChild"><i class="fa fa-fw fa-plus"></i> Add Child</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-child"></i> Child List <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="view-child.html">Child 1</a>
+                        <ul id="demo" class="collapse" ng-controller="UserChildController">
+                            <li ng-repeat="child in ChildInfo">
+                                <a href="/Child/ViewChild#/ViewChild/{{child.ID}}">{{child.Name}}</a>
                             </li>
-                            <li>
-                                <a href="#">Child 2</a>
-                            </li>
+                           
                         </ul>
                     </li>
                 </ul>

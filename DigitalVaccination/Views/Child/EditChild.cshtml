@@ -1,17 +1,17 @@
 ﻿@{
-    ViewBag.Title = "EditCenter";
+    ViewBag.Title = "Edit Child Info";
 
 }
 
-<h2>Edit Center</h2>
+
 @section AngularModule
 {
 
-    <link href="~/Content/ng-bs3-datepicker.css" rel="stylesheet" />
+    <link href="~/Content/ng-bs3-datepicker.css" rel="stylesheet"/>
     <script src="@Url.Content("~/Scripts/angular-resource.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/app/ChildController/childApp.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/app/ChildController/childControllers.js")" type="text/javascript"></script>
-
+    @*Used in layout*@
+    @*<script src="@Url.Content("~/Scripts/app/ChildController/childApp.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/app/ChildController/childControllers.js")" type="text/javascript"></script>*@
 
 }
 <div ng-view></div>

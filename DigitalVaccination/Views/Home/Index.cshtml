@@ -4,27 +4,12 @@
 }
 
 @section AngularModule
-    {
-               <script src="@Url.Content("~/Scripts/angular-resource.js")" type="text/javascript"></script>
-              <script src="@Url.Content("~/Scripts/ui-bootstrap-tpls-0.11.0.js")" type="text/javascript"></script>
-              <script src="@Url.Content("~/Scripts/app/VaccinControllers/app.js")" type="text/javascript"></script>
+{
+    <script src="@Url.Content("~/Scripts/angular-resource.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/ui-bootstrap-tpls-0.11.0.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/app/VaccinControllers/app.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/app/VaccinControllers/controller.js")" type="text/javascript"></script>
 
-    }
-<div class="container-fluid">
+}
+<div ng-view></div>
 
-    <h2>Home Index</h2>
-    <input type="submit" class="itemSubmit" value="Click Me" />
-
-    <p>P1</p>
-    <p id="hiddenpara">P2</p>
-    <p>P1</p>
-    <p>P1</p>
-    <p>P1</p>
-    <p>P1</p>
-    <p>P1</p>
-    <p>P1</p>
-    <input type="text" ng-model="yourName" placeholder="Enter a name here">
-    <h1>Hello, {{ yourName }}!</h1>
-    <div ng-view></div>
-</div>

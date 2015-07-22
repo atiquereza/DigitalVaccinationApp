@@ -1,14 +1,14 @@
 ﻿<div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            Add Child <small></small>
+            {{title}}<small></small>
         </h1>
         <ol class="breadcrumb">
             <li>
                 <i class="fa fa-dashboard"></i> Dashboard
             </li>
             <li class="active">
-                <i class="fa fa-plus"></i> {{messasge}}
+                <i class="fa fa-plus"></i> {{messasge}} 
             </li>
         </ol>
     </div>
@@ -24,32 +24,18 @@
 
             <div class="form-group col-lg-12" required="required">
                 <label>Baby's Name*</label>
-                <input type="" name="" class="form-control" id="" value="">
+                <input class="form-control" id="ChildName" ng-model="ChildName">
             </div>
 
             <div class="form-group col-lg-12">
                 <label>Father's Name*</label>
-                <input type="" name="" class="form-control" id="" value="">
+                <input class="form-control" id="FatherName" ng-model="FatherName">
             </div>
             <div class="form-group col-lg-12">
                 <label>Mother's Name*</label>
-                <input type="" name="" class="form-control" id="" value="">
+                <input class="form-control" id="MotherName" ng-model="MotherName">
             </div>
-            <div class="form-group col-lg-12">
-                <label>Current Address</label>
-                <input type="" name="" class="form-control" id="" value="">
-            </div>
-
-            <div class="form-group col-lg-12">
-                <label>Permanent Address*</label>
-                <input type="" name="" class="form-control" id="" value="">
-            </div>
-
-            <div class="form-group col-lg-6">
-                <label>Mobile Number*</label>
-                <input type="password" name="" class="form-control" id="" value="">
-            </div>
-
+          
             <div class='form-group col-lg-4'>
 
                 <label>Birth Date*</label>
@@ -60,18 +46,7 @@
 
             <div class="form-group col-lg-7">
                 <label>Birth Certificate ID</label>
-                <input type="password" name="" class="form-control" id="" value="">
-            </div>
-
-            <div class="form-group col-lg-6">
-                <label>Email Address*</label>
-                <input type="" name="" class="form-control" id="" value="">
-            </div>
-
-            <div class="form-group col-lg-6">
-                <label>Repeat Email Address*</label>
-                <input type="" name="" class="form-control" id="" value="">
-
+                <input class="form-control" id="BirthCertificateID" ng-model="BirthCertificateID">
             </div>
 
         </div>

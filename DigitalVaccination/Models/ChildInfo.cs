@@ -15,8 +15,8 @@ namespace DigitalVaccination.Models
         public DateTime BirthDate { set; get; }
 
         public string BirthCertificateID{ get; set; }
-        public virtual UserInfo Parent { get; set; }
-
+        public string FatherName { set; get; }
+        public string MotherName { set; get; }
  
 
     }

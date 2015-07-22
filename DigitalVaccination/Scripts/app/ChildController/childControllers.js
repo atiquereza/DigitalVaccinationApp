@@ -1,65 +1,142 @@
-﻿var childControllers = angular.module("ChildModule", ['ui.bootstrap', 'ng-bs3-datepicker']);
+﻿var childControllers = angular.module("ChildModule", ['ui.bootstrap', 'ng-bs3-datepicker','ngResource']);
 
 
-// this controller call the api method and display the list of employees
-// in list.html
-childControllers.controller("UserChildController", ['$scope', '$http',
-    function ($scope, $http) {
+childControllers.controller("UserChildController", [
+    '$scope', '$resource','filterFilter',
+    function ($scope, $resource, filterFilter) {
         $scope.isThingsCollapsed = false;
-        $http.get('/api/User').success(function (data) {
-            $scope.UserInfo = data;
-            $scope.ChildsList = data.Childs;
+
+        var IssueChild = $resource('/api/Child');
+        $scope.childObjects = IssueChild.query();
+
+        $scope.childObjects.$promise.then(function () {
+            $scope.ChildInfo = $scope.childObjects;
 
         });
 
-    }]
-);
 
-// this controller call the api method and display the record of selected employee
-// in delete.html and provide an option for delete
-childControllers.controller("DeleteChildController", ['$scope', '$http', '$routeParams', '$location',
-        function ($scope, $http, $routeParams, $location) {
-            $scope.user = {};
-            // $scope.id = $routeParams.id;
-            $http.get('/api/User/' + $routeParams.id).success(function (data) {
-                $scope.user = data;
-                $scope.Id = data.Id;
-                $scope.UserName = data.UserName;
-                $scope.FullName = data.FullName;
-                $scope.FatherName = data.FatherName;
-                $scope.MotherName = data.MotherName;
-                $scope.PhoneNumber = data.PhoneNumber;
-                $scope.DOB = moment(data.BirthDate).format('YYYY/MM/DD');
-                $scope.CurrentAddress = data.CurrentAddress;
-                $scope.PermanentAddress = data.PermanentAddress;
-                $scope.BirthCertificateID = data.BirthCertificateID;
-                $scope.UserId = data.UserId;
-            });
+        $scope.filtered = [];
+        var Issue = $resource('/api/Vaccination');
+        $scope.objects = Issue.query();
 
-            $scope.ValidUser = function () {
+        $scope.objects.$promise.then(function () {
+            $scope.totalItems = $scope.objects.length;
+            $scope.filtered = $scope.objects;
+            console.log($scope.objects);
+        });
+        $scope.currentPage = 1;
+        $scope.numPerPage = 3;
+        $scope.noOfPages = Math.ceil($scope.filtered.length / $scope.numPerPage);
 
-                if ($scope.Id) { // your question said "more than one element"
-                    $scope.title = "Delete User";
-                    return false;
+        $scope.sortType = 'Name'; // set the default sort type
+        $scope.sortReverse = false; // set the default sort order
 
+        $scope.paginate = function (value) {
+            var begin, end, index;
+            begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            end = begin + $scope.numPerPage;
+
+            index = $scope.filtered.indexOf(value);
+            console.log(index);
+            return (begin <= index && index < end);
+        };
+
+        $scope.$watch('search', function (term) {
+            if ($scope.objects.length > 0) {
+                if (term.length > 0) {
+                    $scope.tempArray = [];
+                    angular.forEach($scope.objects, function (row) {
+                        var t1 = (angular.lowercase((row.Name).toString()).indexOf(angular.lowercase($scope.search) || '') !== -1 || angular.lowercase((row.Description)).toString().indexOf(angular.lowercase($scope.search) || '') !== -1);
+                        if (t1) {
+
+                            $scope.tempArray.push(row);
+                            console.log($scope.filtered);
+                        }
+                    });
+                    $scope.filtered = $scope.tempArray;
+
+
+                } else {
+                    $scope.filtered = $scope.objects;
                 }
-                else {
-                    $scope.title = "Invalid User";
-                    return true;
-                }
-            };
 
-            $scope.delete = function () {
-                $http.delete('/api/User/' + $scope.Id).success(function (data) {
-                    var url = '@Url.Action("Index", "Home")';
-                    // $location.url('/User/Index');
-                    location.href = "/User/Index";
-                    // location.href = "/Center/Index";
-                }).error(function (data) {
-                    $scope.error = "An error has occured while deleting User! " + data;
-                });
-            };
-        }
+                $scope.noOfPages = Math.ceil($scope.filtered.length / $scope.numPerPage);
+                $scope.currentPage = 1;
+                $scope.paginate();
+            }
+        });
+        
+    }
+]);
+
+childControllers.controller("ViewChildInfo", [
+    '$scope', '$resource', 'filterFilter',
+    function ($scope, $resource, filterFilter) {
+        $scope.isThingsCollapsed = false;
+
+       
+
+        var IssueChild = $resource('/api/Child');
+        $scope.childObjects = IssueChild.query();
+
+        $scope.childObjects.$promise.then(function () {
+            $scope.ChildInfo = $scope.childObjects;
+
+        });
+
+
+        $scope.filtered = [];
+        var Issue = $resource('/api/Vaccination');
+        $scope.objects = Issue.query();
+
+        $scope.objects.$promise.then(function () {
+            $scope.totalItems = $scope.objects.length;
+            $scope.filtered = $scope.objects;
+            console.log($scope.objects);
+        });
+        $scope.currentPage = 1;
+        $scope.numPerPage = 3;
+        $scope.noOfPages = Math.ceil($scope.filtered.length / $scope.numPerPage);
+
+        $scope.sortType = 'Name'; // set the default sort type
+        $scope.sortReverse = false; // set the default sort order
+
+        $scope.paginate = function (value) {
+            var begin, end, index;
+            begin = ($scope.currentPage - 1) * $scope.numPerPage;
+            end = begin + $scope.numPerPage;
+
+            index = $scope.filtered.indexOf(value);
+            console.log(index);
+            return (begin <= index && index < end);
+        };
+
+        $scope.$watch('search', function (term) {
+            if ($scope.objects.length > 0) {
+                if (term.length > 0) {
+                    $scope.tempArray = [];
+                    angular.forEach($scope.objects, function (row) {
+                        var t1 = (angular.lowercase((row.Name).toString()).indexOf(angular.lowercase($scope.search) || '') !== -1 || angular.lowercase((row.Description)).toString().indexOf(angular.lowercase($scope.search) || '') !== -1);
+                        if (t1) {
+
+                            $scope.tempArray.push(row);
+                            console.log($scope.filtered);
+                        }
+                    });
+                    $scope.filtered = $scope.tempArray;
+
+
+                } else {
+                    $scope.filtered = $scope.objects;
+                }
+
+                $scope.noOfPages = Math.ceil($scope.filtered.length / $scope.numPerPage);
+                $scope.currentPage = 1;
+                $scope.paginate();
+            }
+        });
+
+    }
 ]);
 
 // this controller call the api method and display the record of selected employee
@@ -67,10 +144,7 @@ childControllers.controller("DeleteChildController", ['$scope', '$http', '$route
 childControllers.controller("EditAddChildController", ['$scope', '$filter', '$http', '$routeParams', '$location',
     function ($scope, $filter, $http, $routeParams, $location) {
         $scope.DOB = $filter('date')(new Date(), 'yyyy/MM/dd');
-        $scope.DatePublish = function () {
-            alert($scope.DOB);
-        };
-
+      
         function errorHandle(data, exception) {
             var errorMessage = "";
             if (data.status === 0) {
@@ -97,30 +171,25 @@ childControllers.controller("EditAddChildController", ['$scope', '$filter', '$ht
         $scope.isDate = false;
         $scope.ID = 0;
         $scope.save = function () {
+
             var obj = {
+                Name: $scope.ChildName,
                 BirthCertificateID: $scope.BirthCertificateID,
                 BirthDate: $scope.DOB,
-                CurrentAddress: $scope.CurrentAddress,
                 FatherName: $scope.FatherName,
-                FullName: $scope.FullName,
-                Id: $scope.ID,
-                MotherName: $scope.MotherName,
-                PermanentAddress: $scope.PermanentAddress,
-                PhoneNumber: $scope.PhoneNumber,
-                UserId: $scope.UserId,
-                UserName: $scope.UserName
+                MotherName: $scope.MotherName
             };
             if ($scope.ID == 0) {
 
-                $http.post('/api/User/', obj).success(function (data) {
-                    location.href = "/User/Index";
+                $http.post('/api/Child/', obj).success(function (data) {
+                    location.href = "/Child/Index#/dashboard";
                 }).error(function (data, xhr) {
                     $scope.error = "An error has occured while Managing user! " + data.status + " " + xhr;
                 });
             }
             else {
-                $http.put('/api/User/', obj).success(function (data) {
-                    location.href = "/User/Index";
+                $http.put('/api/Child/', obj).success(function (data) {
+                    location.href = "/Child/Index#/dashboard";
                 }).error(function (data, xhr) {
                     $scope.error = "An Error has occured while Managing user! " + data.status + " " + xhr;
                 });
@@ -129,12 +198,9 @@ childControllers.controller("EditAddChildController", ['$scope', '$filter', '$ht
 
         if ($routeParams.id) {
             $scope.form = {};
-
-            $http.get('/api/User/' + $routeParams.id).success(function (data) {
+            $http.get('/api/Child/' + $routeParams.id).success(function (data) {
                 $scope.user = data;
                 $scope.ID = data.Id;
-                $scope.UserName = data.UserName;
-                $scope.FullName = data.FullName;
                 $scope.FatherName = data.FatherName;
                 $scope.MotherName = data.MotherName;
                 $scope.PhoneNumber = data.PhoneNumber;
@@ -142,14 +208,12 @@ childControllers.controller("EditAddChildController", ['$scope', '$filter', '$ht
                 $scope.CurrentAddress = data.CurrentAddress;
                 $scope.PermanentAddress = data.PermanentAddress;
                 $scope.BirthCertificateID = data.BirthCertificateID;
-                $scope.UserId = data.UserId;
-
                 if ($scope.ID) {
-                    $scope.title = "Edit User";
+                    $scope.title = "Edit Child info";
+                    $scope.message = "Edit Child info";
                 } else {
-                    $scope.title = "Create New User";
-                    console.log($scope.ID);
-                    //location.href = "/User/Index";
+                    $scope.title = "Add Child info";
+                    $scope.message = "Add Child info";
                 }
             }).error(function (data, exception) {
                 errorHandle(data, exception);
@@ -157,7 +221,8 @@ childControllers.controller("EditAddChildController", ['$scope', '$filter', '$ht
 
         }
         else {
-            $scope.title = "Create New User";
+            $scope.title = "Add Child info";
+            $scope.message = "Add Child info";
         }
     }
 ]);

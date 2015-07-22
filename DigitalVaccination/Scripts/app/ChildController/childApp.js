@@ -10,16 +10,22 @@ angular.element(document).ready(function () {
 });
 
 childApp.config(['$routeProvider', function ($routeProvider) {
-
-  
     $routeProvider.when('/addChild', {
         templateUrl: '/PartialViews/Child/EditChild.html',
         message: 'Add Child',
         controller: 'EditAddChildController'
+    }).when('/dashboard', {
+        templateUrl: '/PartialViews/Child/ChildInfo.html',
+        message: 'Dashboard',
+        controller: 'UserChildController'
+    }).when('/ViewChild/:id', {
+        templateUrl: '/PartialViews/Child/ViewChild.html',
+        controller: 'ViewChildInfo',
+        message: 'View Child'
     }).otherwise({
-            redirectTo: function () {
-                window.location.href = "/Child/Index";
-            }
-        });
+        redirectTo: function() {
+            window.location.href = "/Child/Index#/dashboard";
+        }
+    });
 
 }]);
