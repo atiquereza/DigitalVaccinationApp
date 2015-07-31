@@ -27,31 +27,58 @@ namespace DigitalVaccination.ApiController
             DataSet aSet = aGateway.Select(query,aHashtable);
 
             List<ChildInfo> aList = new List<ChildInfo>();
-            int index = 1;
+            
             foreach (DataRow aRow in aSet.Tables[0].Rows)
             {
                 ChildInfo aInfo = new ChildInfo();
-                aInfo.ID = index;
+                aInfo.ID = Convert.ToInt32(aRow["ID"].ToString());
                 aInfo.Name = aRow["Name"].ToString();
                 aInfo.ParentID = Convert.ToInt32(aRow["ParentID"].ToString());
                 aInfo.BirthCertificateID = aRow["BirthCertificateID"].ToString();
                 aInfo.MotherName = aRow["MotherName"].ToString();
                 aInfo.BirthDate = Convert.ToDateTime(aRow["Birthdate"].ToString());
                 aList.Add(aInfo);
-                index++;
             }
 
 
             return aList;
         }
 
-        //// GET api/<controller>/5
-        //public ChildInfo Get(int id)
-        //{
-            
-        //}
 
-        // POST api/<controller>
+        // GET api/<controller>
+        public List<ChildInfo> Get(int id)
+        {
+            HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
+            Dictionary<string, string> session = SessionHandler.GetSessionData(Session);
+            string query = "select * from childinfo where parentid=@ParentId and ID=@Id;";
+            Hashtable aHashtable = new Hashtable();
+            aHashtable.Add("ParentId", session["UserId"]);
+            aHashtable.Add("Id", id);
+
+            DBGateway aGateway = new DBGateway();
+            DataSet aSet = aGateway.Select(query, aHashtable);
+            ChildInfo aInfo = new ChildInfo();
+            List<ChildInfo> aList = new List<ChildInfo>();
+
+            foreach (DataRow aRow in aSet.Tables[0].Rows)
+            {
+                aInfo.ID = Convert.ToInt32(aRow["ID"].ToString());                
+                aInfo.Name = aRow["Name"].ToString();
+                aInfo.ParentID = Convert.ToInt32(aRow["ParentID"].ToString());
+                aInfo.BirthCertificateID = aRow["BirthCertificateID"].ToString();
+                aInfo.MotherName = aRow["MotherName"].ToString();
+                aInfo.BirthDate = Convert.ToDateTime(aRow["Birthdate"].ToString());
+                
+            }
+            aList.Add(aInfo);
+
+            return aList;
+        }
+
+        
+
+        
+
         public HttpResponseMessage Post(ChildInfo childInfo)
         {
 

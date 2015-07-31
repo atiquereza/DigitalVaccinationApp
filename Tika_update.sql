@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for tikaappdb
+DROP DATABASE IF EXISTS `tikaappdb`;
 CREATE DATABASE IF NOT EXISTS `tikaappdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `tikaappdb`;
 
 
 -- Dumping structure for table tikaappdb.appmenuitems
+DROP TABLE IF EXISTS `appmenuitems`;
 CREATE TABLE IF NOT EXISTS `appmenuitems` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `MenuName` varchar(50) DEFAULT '0',
@@ -40,6 +42,7 @@ INSERT INTO `appmenuitems` (`id`, `MenuName`, `MenuParentName`, `AppViewId`, `Me
 
 
 -- Dumping structure for table tikaappdb.appviews
+DROP TABLE IF EXISTS `appviews`;
 CREATE TABLE IF NOT EXISTS `appviews` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Controller` varchar(100) NOT NULL DEFAULT '0',
@@ -67,6 +70,7 @@ INSERT INTO `appviews` (`ID`, `Controller`, `ControllerType`, `Action`, `Argumen
 
 
 -- Dumping structure for table tikaappdb.centers
+DROP TABLE IF EXISTS `centers`;
 CREATE TABLE IF NOT EXISTS `centers` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ThanasID` int(11) DEFAULT '0',
@@ -91,6 +95,7 @@ INSERT INTO `centers` (`ID`, `ThanasID`, `CentersName`, `CentersAddress`) VALUES
 
 
 -- Dumping structure for table tikaappdb.child
+DROP TABLE IF EXISTS `child`;
 CREATE TABLE IF NOT EXISTS `child` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserloginID` int(11) NOT NULL DEFAULT '0',
@@ -110,29 +115,40 @@ DELETE FROM `child`;
 
 
 -- Dumping structure for table tikaappdb.childinfo
+DROP TABLE IF EXISTS `childinfo`;
 CREATE TABLE IF NOT EXISTS `childinfo` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ParentID` int(11) NOT NULL DEFAULT '0',
   `Name` varchar(50) NOT NULL DEFAULT '0',
   `Birthdate` date DEFAULT NULL,
   `BirthCertificateID` varchar(50) DEFAULT '0',
+  `MotherName` varchar(50) DEFAULT '0',
   PRIMARY KEY (`ID`),
   KEY `parentFK` (`ParentID`),
   CONSTRAINT `parentFK` FOREIGN KEY (`ParentID`) REFERENCES `userinfo` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.childinfo: ~2 rows (approximately)
+-- Dumping data for table tikaappdb.childinfo: ~9 rows (approximately)
 DELETE FROM `childinfo`;
 /*!40000 ALTER TABLE `childinfo` DISABLE KEYS */;
-INSERT INTO `childinfo` (`ID`, `ParentID`, `Name`, `Birthdate`, `BirthCertificateID`) VALUES
-	(1, 1, 'sonamuni1', '2015-05-31', '0'),
-	(2, 1, 'sonamuni2', '2017-05-31', '0');
+INSERT INTO `childinfo` (`ID`, `ParentID`, `Name`, `Birthdate`, `BirthCertificateID`, `MotherName`) VALUES
+	(1, 1, 'sonamuni1', '2015-05-31', '0', '0'),
+	(2, 1, 'sonamuni2', '2017-05-31', '0', '0'),
+	(3, 1, 'sonamuni2', '2017-05-31', '0', '0'),
+	(4, 1, 'sonamuni2', '2017-05-31', '0', '0'),
+	(5, 10, 'baccha1', '2015-07-11', 'asdfsdf', 'amma'),
+	(6, 10, 'baccha2', '2015-07-11', 'asdfasdf', 'amma'),
+	(7, 10, 'baccha3', '2015-07-12', 'twertwert', 'amma'),
+	(8, 10, 'baccha4', '2015-07-22', '12343452345', 'amma'),
+	(9, 10, 'baccha5', '2015-07-31', 'kjkljlk', 'lkjlk'),
+	(10, 10, 'bacch6', '2015-08-01', '12223424', 'amma');
 /*!40000 ALTER TABLE `childinfo` ENABLE KEYS */;
 
 
 -- Dumping structure for table tikaappdb.childvaccin
+DROP TABLE IF EXISTS `childvaccin`;
 CREATE TABLE IF NOT EXISTS `childvaccin` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ChildID` int(11) DEFAULT NULL,
   `VaccinID` int(11) DEFAULT NULL,
   `Status` bit(1) DEFAULT NULL,
@@ -142,15 +158,21 @@ CREATE TABLE IF NOT EXISTS `childvaccin` (
   KEY `FKVaccine` (`VaccinID`),
   CONSTRAINT `FKChild` FOREIGN KEY (`ChildID`) REFERENCES `childinfo` (`ID`),
   CONSTRAINT `FKVaccine` FOREIGN KEY (`VaccinID`) REFERENCES `vaccineinfo` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.childvaccin: ~0 rows (approximately)
+-- Dumping data for table tikaappdb.childvaccin: ~1 rows (approximately)
 DELETE FROM `childvaccin`;
 /*!40000 ALTER TABLE `childvaccin` DISABLE KEYS */;
+INSERT INTO `childvaccin` (`ID`, `ChildID`, `VaccinID`, `Status`, `Date`) VALUES
+	(46, 10, 12, b'1', NULL),
+	(47, 10, 14, b'1', NULL),
+	(48, 10, 2, b'1', NULL),
+	(49, 10, 3, b'1', NULL);
 /*!40000 ALTER TABLE `childvaccin` ENABLE KEYS */;
 
 
 -- Dumping structure for table tikaappdb.disease
+DROP TABLE IF EXISTS `disease`;
 CREATE TABLE IF NOT EXISTS `disease` (
   `ID` int(11) NOT NULL,
   `DiseaseName` varchar(50) NOT NULL,
@@ -165,6 +187,7 @@ DELETE FROM `disease`;
 
 
 -- Dumping structure for table tikaappdb.districts
+DROP TABLE IF EXISTS `districts`;
 CREATE TABLE IF NOT EXISTS `districts` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DistrictsName` varchar(50) NOT NULL,
@@ -244,6 +267,7 @@ INSERT INTO `districts` (`ID`, `DistrictsName`, `DistrictsPopulation`) VALUES
 
 
 -- Dumping structure for table tikaappdb.employees
+DROP TABLE IF EXISTS `employees`;
 CREATE TABLE IF NOT EXISTS `employees` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `firstName` varchar(255) DEFAULT NULL,
@@ -251,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=601 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.employees: ~425 rows (approximately)
+-- Dumping data for table tikaappdb.employees: ~757 rows (approximately)
 DELETE FROM `employees`;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
 INSERT INTO `employees` (`id`, `firstName`, `lastName`) VALUES
@@ -849,6 +873,7 @@ INSERT INTO `employees` (`id`, `firstName`, `lastName`) VALUES
 
 
 -- Dumping structure for table tikaappdb.featuredetails
+DROP TABLE IF EXISTS `featuredetails`;
 CREATE TABLE IF NOT EXISTS `featuredetails` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `FeatureSummaryID` int(11) NOT NULL DEFAULT '0',
@@ -872,6 +897,7 @@ DELETE FROM `featuredetails`;
 
 
 -- Dumping structure for table tikaappdb.featureimplementation
+DROP TABLE IF EXISTS `featureimplementation`;
 CREATE TABLE IF NOT EXISTS `featureimplementation` (
   `ID` int(11) NOT NULL,
   `ChildID` int(11) NOT NULL,
@@ -896,6 +922,7 @@ DELETE FROM `featureimplementation`;
 
 
 -- Dumping structure for table tikaappdb.featuresummary
+DROP TABLE IF EXISTS `featuresummary`;
 CREATE TABLE IF NOT EXISTS `featuresummary` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `FeatureName` varchar(50) NOT NULL DEFAULT '0',
@@ -909,6 +936,7 @@ DELETE FROM `featuresummary`;
 
 
 -- Dumping structure for table tikaappdb.menuitems
+DROP TABLE IF EXISTS `menuitems`;
 CREATE TABLE IF NOT EXISTS `menuitems` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MenuName` varchar(50) NOT NULL,
@@ -928,6 +956,7 @@ DELETE FROM `menuitems`;
 
 
 -- Dumping structure for table tikaappdb.roles
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `RoleName` varchar(200) NOT NULL,
@@ -947,6 +976,7 @@ INSERT INTO `roles` (`ID`, `RoleName`, `ParentRoleName`) VALUES
 
 
 -- Dumping structure for table tikaappdb.thanas
+DROP TABLE IF EXISTS `thanas`;
 CREATE TABLE IF NOT EXISTS `thanas` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `DistrictsID` int(11) NOT NULL DEFAULT '0',
@@ -956,7 +986,7 @@ CREATE TABLE IF NOT EXISTS `thanas` (
   CONSTRAINT `FKdistrictsID` FOREIGN KEY (`DistrictsID`) REFERENCES `districts` (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=512 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.thanas: ~611 rows (approximately)
+-- Dumping data for table tikaappdb.thanas: ~413 rows (approximately)
 DELETE FROM `thanas`;
 /*!40000 ALTER TABLE `thanas` DISABLE KEYS */;
 INSERT INTO `thanas` (`ID`, `DistrictsID`, `ThanasName`) VALUES
@@ -1475,6 +1505,7 @@ INSERT INTO `thanas` (`ID`, `DistrictsID`, `ThanasName`) VALUES
 
 
 -- Dumping structure for table tikaappdb.userinfo
+DROP TABLE IF EXISTS `userinfo`;
 CREATE TABLE IF NOT EXISTS `userinfo` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserID` int(11) NOT NULL,
@@ -1490,9 +1521,9 @@ CREATE TABLE IF NOT EXISTS `userinfo` (
   PRIMARY KEY (`ID`),
   KEY `UserID` (`UserID`),
   CONSTRAINT `UserID` FOREIGN KEY (`UserID`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
 
--- Dumping data for table tikaappdb.userinfo: ~87 rows (approximately)
+-- Dumping data for table tikaappdb.userinfo: ~89 rows (approximately)
 DELETE FROM `userinfo`;
 /*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
 INSERT INTO `userinfo` (`ID`, `UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES
@@ -1582,11 +1613,14 @@ INSERT INTO `userinfo` (`ID`, `UserID`, `UserName`, `FullName`, `FatherName`, `M
 	(90, 107, 'Adrian', 'Wade Parker', 'Fletcher Wells', 'Xaviera Crane', '09 28 29 65 68', '1956-06-11', 'Caplan', 'Apeldoorn', '4288630406232558'),
 	(91, 108, 'Curran', 'Tiger Rosario', 'Gage Kennedy', 'Hayley Wilkins', '05 53 71 33 05', '1956-06-11', 'Bathurst', 'Tulsa', '4372264076769351'),
 	(92, 109, 'Dustin', 'Howard Oneill', 'Kermit Castro', 'Hedwig Little', '02 83 99 71 02', '1956-06-11', 'Cabras', 'Cognelee', '4245403683930637'),
-	(93, 110, 'Noble', 'Colt Yang', 'Nathan Wall', 'Moana Mckinney', '07 81 83 62 63', '1956-06-11', 'Menai Bridge', 'Omaha', '4956092633632949');
+	(93, 110, 'Noble', 'Colt Yang', 'Nathan Wall', 'Moana Mckinney', '07 81 83 62 63', '1956-06-11', 'Menai Bridge', 'Omaha', '4956092633632949'),
+	(94, 101, 'nkala', 'full nkala', 'asdfasdf', 'asdfasd', 'asdfasdf', '2015-07-10', 'asdfasdffffffff', 'asdffffffffffff', '222222222222222222'),
+	(95, 101, 'nkala', 'full nkala', 'asdfasdf', 'asdfasdfasdf', '01933454555', '2015-07-10', 'asdffffffffffff', 'asdfasdffffffff', '2222222222222');
 /*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
 
 
 -- Dumping structure for table tikaappdb.userlogin
+DROP TABLE IF EXISTS `userlogin`;
 CREATE TABLE IF NOT EXISTS `userlogin` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL DEFAULT '0',
@@ -1606,6 +1640,7 @@ DELETE FROM `userlogin`;
 
 
 -- Dumping structure for table tikaappdb.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserName` varchar(50) NOT NULL,
@@ -1727,30 +1762,33 @@ INSERT INTO `users` (`ID`, `UserName`, `UserCellNumber`, `UserRoleId`) VALUES
 
 
 -- Dumping structure for table tikaappdb.vaccineinfo
+DROP TABLE IF EXISTS `vaccineinfo`;
 CREATE TABLE IF NOT EXISTS `vaccineinfo` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `VaccineName` varchar(50) NOT NULL DEFAULT '0',
   `Type` varchar(50) DEFAULT 'Genaral',
   `StartDay` int(11) NOT NULL DEFAULT '0',
+  `Amount` int(11) NOT NULL DEFAULT '0',
   `EndDay` int(11) NOT NULL DEFAULT '0',
   `Description` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table tikaappdb.vaccineinfo: ~10 rows (approximately)
 DELETE FROM `vaccineinfo`;
 /*!40000 ALTER TABLE `vaccineinfo` DISABLE KEYS */;
-INSERT INTO `vaccineinfo` (`ID`, `VaccineName`, `Type`, `StartDay`, `EndDay`, `Description`) VALUES
-	(2, 'hum', 'Genaral', 30, 100, 'hhh2345666'),
-	(3, 'pp', 'Genaral', 1, 1000, 'hjjk'),
-	(5, 'piol', 'Genaral', 40, 80, 'ghgh890'),
-	(6, 'qq', 'Genaral', 0, 0, '0'),
-	(7, 'lmn', 'Genaral', 0, 0, '0'),
-	(8, 'gggmnp', 'Genaral', 0, 0, '0'),
-	(9, 'hikhu', 'Genaral', 0, 0, '0'),
-	(10, 'VAccin1', 'Genaral', 30, 40, 'Very useful 1'),
-	(11, 'v1', 'Genaral', 10, 20, 'hii'),
-	(12, 'dfdf', 'Genaral', 30, 30, 'sdsd');
+INSERT INTO `vaccineinfo` (`ID`, `VaccineName`, `Type`, `StartDay`, `Amount`, `EndDay`, `Description`) VALUES
+	(2, 'hum', 'Genaral', 30, 0, 100, 'hhh2345666'),
+	(3, 'pp', 'Genaral', 1, 0, 1000, 'hjjk'),
+	(5, 'piol', 'Genaral', 40, 0, 80, 'ghgh890'),
+	(6, 'qq', 'Genaral', 0, 0, 0, '0'),
+	(7, 'lmn', 'Genaral', 0, 0, 0, '0'),
+	(8, 'gggmnp', 'Genaral', 0, 0, 0, '0'),
+	(9, 'hikhu', 'Genaral', 0, 0, 0, '0'),
+	(10, 'VAccin1', 'Genaral', 30, 0, 40, 'Very useful 1'),
+	(11, 'v1', 'Genaral', 10, 0, 20, 'hii'),
+	(12, 'dfdf', 'Genaral', 30, 0, 30, 'sdsd'),
+	(14, 'lau_Kodu', 'Genaral', 50, 0, 70, 'jllkj');
 /*!40000 ALTER TABLE `vaccineinfo` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

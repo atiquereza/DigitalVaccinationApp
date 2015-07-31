@@ -25,7 +25,7 @@ childControllers.controller("UserChildController", [
             console.log($scope.objects);
         });
         $scope.currentPage = 1;
-        $scope.numPerPage = 3;
+        $scope.numPerPage = 10;
         $scope.noOfPages = Math.ceil($scope.filtered.length / $scope.numPerPage);
 
         $scope.sortType = 'Name'; // set the default sort type
@@ -70,13 +70,15 @@ childControllers.controller("UserChildController", [
 ]);
 
 childControllers.controller("ViewChildInfo", [
-    '$scope', '$resource', 'filterFilter',
-    function ($scope, $resource, filterFilter) {
+    '$scope', '$resource', 'filterFilter', '$routeParams',
+    function ($scope, $resource, filterFilter,$routeParams) {
         $scope.isThingsCollapsed = false;
+
+
 
        
 
-        var IssueChild = $resource('/api/Child');
+        var IssueChild = $resource('/api/Child/' + $routeParams.id );
         $scope.childObjects = IssueChild.query();
 
         $scope.childObjects.$promise.then(function () {
@@ -86,7 +88,7 @@ childControllers.controller("ViewChildInfo", [
 
 
         $scope.filtered = [];
-        var Issue = $resource('/api/Vaccination');
+        var Issue = $resource('/api/ChildVaccin/' + $routeParams.id);
         $scope.objects = Issue.query();
 
         $scope.objects.$promise.then(function () {
@@ -95,7 +97,7 @@ childControllers.controller("ViewChildInfo", [
             console.log($scope.objects);
         });
         $scope.currentPage = 1;
-        $scope.numPerPage = 3;
+        $scope.numPerPage = 10;
         $scope.noOfPages = Math.ceil($scope.filtered.length / $scope.numPerPage);
 
         $scope.sortType = 'Name'; // set the default sort type
@@ -107,7 +109,6 @@ childControllers.controller("ViewChildInfo", [
             end = begin + $scope.numPerPage;
 
             index = $scope.filtered.indexOf(value);
-            console.log(index);
             return (begin <= index && index < end);
         };
 
@@ -116,12 +117,11 @@ childControllers.controller("ViewChildInfo", [
                 if (term.length > 0) {
                     $scope.tempArray = [];
                     angular.forEach($scope.objects, function (row) {
-                        var t1 = (angular.lowercase((row.Name).toString()).indexOf(angular.lowercase($scope.search) || '') !== -1 || angular.lowercase((row.Description)).toString().indexOf(angular.lowercase($scope.search) || '') !== -1);
+                        var t1 = (angular.lowercase((row.VaccinName).toString()).indexOf(angular.lowercase($scope.search) || '') !== -1);
                         if (t1) {
 
                             $scope.tempArray.push(row);
-                            console.log($scope.filtered);
-                        }
+                                    }
                     });
                     $scope.filtered = $scope.tempArray;
 
@@ -226,3 +226,23 @@ childControllers.controller("EditAddChildController", ['$scope', '$filter', '$ht
         }
     }
 ]);
+
+
+childControllers.controller("UpdateTikaStatus", [
+    '$scope', '$resource', 'filterFilter', '$routeParams',
+    function ($scope, $resource, filterFilter, $routeParams) {
+        $scope.isThingsCollapsed = false;
+
+        var obj = {
+            TikaId: $routeParams.tid,
+            ChildId: $routeParams.cid
+        }
+
+        var IssusSave = $resource('/api/ChildVaccin/');
+        $scope.objectSave = IssusSave.save(obj);
+        //window.location.href = "/Child/ViewChild";
+        window.location.href = "/Child/ViewChild#/ViewChild/" + $routeParams.cid;
+
+    }]);
+
+

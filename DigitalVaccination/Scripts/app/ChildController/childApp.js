@@ -22,6 +22,10 @@ childApp.config(['$routeProvider', function ($routeProvider) {
         templateUrl: '/PartialViews/Child/ViewChild.html',
         controller: 'ViewChildInfo',
         message: 'View Child'
+    }).when('/UpdateTikaStatus/:tid/:cid', {
+        templateUrl: '/PartialViews/Child/ViewChild.html',
+        controller: 'UpdateTikaStatus',
+        message: 'View Child'
     }).otherwise({
         redirectTo: function() {
             window.location.href = "/Child/Index#/dashboard";

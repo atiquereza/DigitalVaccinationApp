@@ -161,6 +161,7 @@
     <Compile Include="ApiController\CenterController.cs" />
     <Compile Include="ApiController\CenterPagingController.cs" />
     <Compile Include="ApiController\ChildController.cs" />
+    <Compile Include="ApiController\ChildVaccinController.cs" />
     <Compile Include="ApiController\UsersPagingController.cs" />
     <Compile Include="ApiController\QuerySortingExtensions.cs" />
     <Compile Include="ApiController\UserController.cs" />
@@ -192,8 +193,10 @@
     <Compile Include="Models\Account\Account.cs" />
     <Compile Include="Models\Centers.cs" />
     <Compile Include="Models\ChildInfo.cs" />
+    <Compile Include="Models\ChildVaccinInfo.cs" />
     <Compile Include="Models\Districts.cs" />
     <Compile Include="Models\Thanas.cs" />
+    <Compile Include="Models\TikaStatusChangeInfo.cs" />
     <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Models\Vaccin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -547,7 +550,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>5304</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5306/</IISUrl>
+          <IISUrl>http://localhost:5381/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
