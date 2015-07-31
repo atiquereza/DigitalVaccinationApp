@@ -9,7 +9,7 @@ TikaControllers.controller('ListController', [
 
             $scope.filtered = [];
             //var Issue = $resource('https://api.github.com/repos/angular-ui/bootstrap/issues');
-            var Issue = $resource('/api/Vaccination');
+            var Issue = $resource('api/Vaccination');
             $scope.objects = Issue.query();
 
             $scope.objects.$promise.then(function() {
@@ -65,35 +65,23 @@ TikaControllers.controller('ListController', [
 
 // this controller call the api method and display the record of selected employee
 // in delete.html and provide an option for delete
-TikaControllers.controller("DeleteController", ['$scope', '$resource', '$routeParams', '$location',
-        function ($scope, $resource, $routeParams, $location) {
+TikaControllers.controller("DeleteController", ['$scope', '$http', '$routeParams', '$location',
+        function ($scope, $http, $routeParams, $location) {
 
             $scope.id = $routeParams.id;
-      
-            var Issue = $resource('/api/Vaccination/' + $routeParams.id);
-            $scope.objects = Issue.get();
-
-            $scope.objects.$promise.then(function () {
-               
-                $scope.vaccinName = $scope.objects.Name;
-                $scope.startTime = $scope.objects.StartDay;
-                $scope.endTime = $scope.objects.EndDay;
-                $scope.description = $scope.objects.Description;
-            }, function(error) {
-                $scope.error = "An error has occured while deleting employee! " + error;
-
+            $http.get('api/Vaccination/' + $routeParams.id).success(function (data) {
+                $scope.vaccinName = data.Name;
+                $scope.startTime = data.StartDay;
+                $scope.endTime = data.EndDay;
+                $scope.description = data.Description;
             });
-
-
 
             $scope.delete = function () {
 
-              
-                $scope.objectsDelete=Issue.delete();
-                $scope.objectsDelete.$promise.then(function () {
+                $http.delete('api/Vaccination/' + $scope.id).success(function (data) {
                     $location.path('/list');
-                },function (error) {
-                    $scope.error = "An error has occured while deleting employee! " + error;
+                }).error(function (data) {
+                    $scope.error = "An error has occured while deleting employee! " + data;
                 });
             };
         }
@@ -101,12 +89,12 @@ TikaControllers.controller("DeleteController", ['$scope', '$resource', '$routePa
 
 // this controller call the api method and display the record of selected employee
 // in edit.html and provide an option for create and modify the employee and save the employee record
-TikaControllers.controller("EditController", ['$scope', '$filter', '$resource', '$routeParams', '$location',
-    function ($scope, $filter, $resource, $routeParams, $location) {
+TikaControllers.controller("EditController", ['$scope', '$filter', '$http', '$routeParams', '$location',
+    function ($scope, $filter, $http, $routeParams, $location) {
 
         $scope.ID = 0;
 
-        $scope.save = function() {
+        $scope.save = function () {
 
             $scope.startTime = parseInt($scope.startTime, 10);
             $scope.endTime = parseInt($scope.endTime, 10);
@@ -121,35 +109,20 @@ TikaControllers.controller("EditController", ['$scope', '$filter', '$resource', 
 
             if ($scope.ID == 0) {
 
-                
-                var IssusSave = $resource('/api/Vaccination/');
-                $scope.objectSave = IssusSave.save(obj);
-                $scope.objectSave.$promise.then(function () {
+                $http.post('api/Vaccination/', obj).success(function (data) {
                     $location.path('/list');
-                }, function (error) {
-                  
-                    $scope.error = "An error has occured while adding employee! ";
+                }).error(function (data) {
+                    $scope.error = "An error has occured while adding employee! " + data.ExceptionMessage;
                 });
-
-            } else {
-               
-                var IssueUpdate = $resource('/api/Vaccination/', {}, {
-                    update: {
-                        method: 'PUT'
-                    }
-                });
-
-                
-
-                $scope.objectsUpdate = IssueUpdate.update(obj);
-                $scope.objectsUpdate.$promise.then(function() {
-                    
-                    $location.path('/list');
-                },function (error) {
-                    
-                    $scope.error = "An error has occured while Saving employee! ";
-                });
+            }
+            else {
               
+                $http.put('api/Vaccination/', obj).success(function (data) {
+                    $location.path('/list');
+                }).error(function (data) {
+                    console.log(data);
+                    $scope.error = "An Error has occured while Saving customer! " + data.ExceptionMessage;
+                });
             }
         }
 
@@ -158,24 +131,14 @@ TikaControllers.controller("EditController", ['$scope', '$filter', '$resource', 
             //alert($routeParams.ID);
             $scope.ID = $routeParams.id;
             $scope.title = "Edit Vaccin";
-          
-        
+            $scope.vaccinName = "Hellooo";
+            $http.get('api/Vaccination/' + $routeParams.id).success(function (data) {
+                $scope.vaccinName = data.Name;
+                $scope.startTime = data.StartDay;
+                $scope.endTime = data.EndDay;
+                $scope.description = data.Description;
 
-            var Issue = $resource('/api/Vaccination/' + $routeParams.id);
-            $scope.objectsGetVaccin = Issue.get();
 
-            $scope.objectsGetVaccin.$promise.then(function () {
-                //$scope.totalItems = $scope.objects.length;
-                //$scope.filtered = $scope.objects;
-                //console.log($scope.objects);
-
-                $scope.vaccinName = $scope.objectsGetVaccin.Name;
-                $scope.startTime = $scope.objectsGetVaccin.StartDay;
-                $scope.endTime = $scope.objectsGetVaccin.EndDay;
-                $scope.description = $scope.objectsGetVaccin.Description;
-            },function (error) {
-               
-                $scope.error = "An error has occured while Acquiring employee Information! ";
             });
         }
         else {
