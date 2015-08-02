@@ -77,7 +77,7 @@ namespace DigitalVaccination.ApiController
                 aInfo.VaccinName = aRow["VaccineName"].ToString();
                 aInfo.LastNotificationSent = DateTime.Now;
                 aInfo.Date = Convert.ToDateTime(childInfo.BirthDate.AddDays(Convert.ToInt32(aRow["StartDay"].ToString())));
-                aInfo.DueDate = Convert.ToDateTime(childInfo.BirthDate.AddDays(Convert.ToInt32(aRow["EndDay"].ToString())));
+                aInfo.DueDate = Convert.ToDateTime(childInfo.BirthDate.AddDays(Convert.ToInt32(aRow["EndDay"].ToString()) + Convert.ToInt32(aRow["StartDay"].ToString())));
                 
                 if(childGivenVaccin.ContainsKey(index))
                 {
