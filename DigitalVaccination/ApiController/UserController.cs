@@ -19,7 +19,7 @@ namespace DigitalVaccination.ApiController
         //[ApiAuthorize]
         public UserInfo Get()
         {
-           
+
 
             string query = "select * from userinfo";
             DataSet aSet = aGateway.Select(query);
@@ -28,7 +28,7 @@ namespace DigitalVaccination.ApiController
             UserInfo aUserInfo = new UserInfo();
             foreach (DataRow dataRow in aSet.Tables[0].Rows)
             {
-               
+
                 aUserInfo.Id = Convert.ToInt32(dataRow["ID"].ToString());
                 aUserInfo.UserId = Convert.ToInt32(dataRow["UserID"].ToString());
                 aUserInfo.UserName = dataRow["UserName"].ToString();
@@ -40,15 +40,15 @@ namespace DigitalVaccination.ApiController
                 aUserInfo.CurrentAddress = dataRow["CurrentAddress"].ToString();
                 aUserInfo.PermanentAddress = dataRow["PermanentAddress"].ToString();
                 aUserInfo.BirthCertificateID = dataRow["BirthCertificateID"].ToString();
-               
+
             }
 
             query = "select * from childInfo where ParentID=1";
             DataSet anotherDataSet = aGateway.Select(query);
-            List<ChildInfo> childList=new List<ChildInfo>();
+            List<ChildInfo> childList = new List<ChildInfo>();
             foreach (DataRow dataRow in anotherDataSet.Tables[0].Rows)
             {
-                ChildInfo aChildInfo=new ChildInfo();
+                ChildInfo aChildInfo = new ChildInfo();
                 aChildInfo.ID = Convert.ToInt32(dataRow["ID"].ToString());
                 aChildInfo.ParentID = Convert.ToInt32(dataRow["ParentID"].ToString());
                 aChildInfo.Name = dataRow["Name"].ToString();
@@ -59,13 +59,13 @@ namespace DigitalVaccination.ApiController
             aUserInfo.Childs = childList;
             return aUserInfo;
         }
-        
-        //[ApiAuthorize]
+
+        [ApiAuthorize]
         public UserInfo Get(int id)
-        {  
+        {
             string query = "select * from userinfo where id=@id;";
             Hashtable aTable = new Hashtable() { { "id", id } };
-            DataSet aSet = aGateway.Select(query,aTable);
+            DataSet aSet = aGateway.Select(query, aTable);
 
             List<UserInfo> userInfos = new List<UserInfo>();
             UserInfo aUserInfo = new UserInfo();
@@ -136,25 +136,48 @@ namespace DigitalVaccination.ApiController
         {
             if (ModelState.IsValid)
             {
-                string query = "INSERT INTO `tikaappdb`.`userinfo` (`UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES (@UserID, @UserName, @FullName, @FatherName, @MotherName, @CellNumber, @BirthDay, @CurrentAddress, @PermanentAddress, @BirthCertificateID);";
-                Hashtable aHashtable = new Hashtable();
-                aHashtable.Add("id", aUser.Id);
-                aHashtable.Add("UserID", 101);
-                aHashtable.Add("UserName", aUser.UserName);
-                aHashtable.Add("FullName", aUser.FullName);
-                aHashtable.Add("FatherName", aUser.FatherName);
-                aHashtable.Add("MotherName", aUser.MotherName);
-                aHashtable.Add("CellNumber", aUser.PhoneNumber);
-                aHashtable.Add("BirthDay", aUser.BirthDate);
-                aHashtable.Add("CurrentAddress", aUser.CurrentAddress);
-                aHashtable.Add("PermanentAddress", aUser.PermanentAddress);
-                aHashtable.Add("BirthCertificateID", aUser.BirthCertificateID);
+
+                string phoneQuery = "Select * from userinfo where  CellNumber=" + aUser.PhoneNumber + " ;";
+                string userNameQuery = "Select * from users where  UserName='" + aUser.UserName + "' ;";
+
+                DataSet aDataSet = aGateway.Select(phoneQuery);
+                DataSet anotherDataSet = aGateway.Select(userNameQuery);
+                if (aDataSet.Tables[0].Rows.Count > 0)
+                {
+                    var message = string.Format("Duplicate Phone Number");
+                    HttpError err = new HttpError(message);
+                    return Request.CreateResponse(HttpStatusCode.NotAcceptable, err);
+                }
+                else if (anotherDataSet.Tables[0].Rows.Count > 0)
+                {
+
+                    var message = string.Format("Duplicate UserName");
+                    HttpError err = new HttpError(message);
+                    return Request.CreateResponse(HttpStatusCode.NotAcceptable, err);
+                }
+                else
+                {
+                    string query =
+                        "INSERT INTO `tikaappdb`.`userinfo` (`UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES (@UserID, @UserName, @FullName, @FatherName, @MotherName, @CellNumber, @BirthDay, @CurrentAddress, @PermanentAddress, @BirthCertificateID);";
+                    Hashtable aHashtable = new Hashtable();
+                    aHashtable.Add("id", aUser.Id);
+                    aHashtable.Add("UserID", 101);
+                    aHashtable.Add("UserName", aUser.UserName);
+                    aHashtable.Add("FullName", aUser.FullName);
+                    aHashtable.Add("FatherName", aUser.FatherName);
+                    aHashtable.Add("MotherName", aUser.MotherName);
+                    aHashtable.Add("CellNumber", aUser.PhoneNumber);
+                    aHashtable.Add("BirthDay", aUser.BirthDate);
+                    aHashtable.Add("CurrentAddress", aUser.CurrentAddress);
+                    aHashtable.Add("PermanentAddress", aUser.PermanentAddress);
+                    aHashtable.Add("BirthCertificateID", aUser.BirthCertificateID);
 
 
-                aGateway.Insert(query, aHashtable);
+                    aGateway.Insert(query, aHashtable);
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, aUser);
-                return response;
+                    HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, aUser);
+                    return response;
+                }
             }
             else
             {
@@ -169,7 +192,7 @@ namespace DigitalVaccination.ApiController
             string query = "DELETE FROM `tikaappdb`.`userinfo` WHERE  `ID`=" + id + ";";
             aGateway.Delete(query);
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK, id);
-            
+
             return response;
         }
     }

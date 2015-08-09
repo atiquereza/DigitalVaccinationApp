@@ -162,6 +162,7 @@
     <Compile Include="ApiController\CenterPagingController.cs" />
     <Compile Include="ApiController\ChildController.cs" />
     <Compile Include="ApiController\ChildVaccinController.cs" />
+    <Compile Include="ApiController\UserRolesController.cs" />
     <Compile Include="ApiController\UsersPagingController.cs" />
     <Compile Include="ApiController\QuerySortingExtensions.cs" />
     <Compile Include="ApiController\UserController.cs" />
@@ -198,6 +199,7 @@
     <Compile Include="Models\Thanas.cs" />
     <Compile Include="Models\TikaStatusChangeInfo.cs" />
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\Vaccin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Classes\MenuItems.cs" />
