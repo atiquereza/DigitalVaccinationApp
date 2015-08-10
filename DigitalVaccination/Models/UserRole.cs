@@ -10,5 +10,6 @@ namespace DigitalVaccination.Models
         public int Id { get; set; }
         public string RoleName { get; set; }
         public string ParentRoleName { get; set; }
+        public int Level { get; set; }
     }
 }

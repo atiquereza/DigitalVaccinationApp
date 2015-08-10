@@ -35,18 +35,48 @@ namespace DigitalVaccination.ApiController
                 userRoles.Add(aUserRole);
             }
 
-            UserRole superUserRole= userRoles.Where(c => c.ParentRoleName == c.RoleName).First();
-           //  = userRoles.Take(userRoles.Count).
-            List<string> rolsList = (from o in userRoles select o.RoleName).Distinct().ToList();
-            List<string> parentList = (from o in userRoles select o.ParentRoleName).Distinct().ToList();
+            string currentRole = userRoles.Find(i => i.Id == roleID).RoleName;
+
+            List<UserRole> aList = new List<UserRole>();
 
 
+            List<string> checkedRoles = new List<string>();
+            foreach (UserRole aUserRole in userRoles)
+            {
+                List<UserRole> recalledList = GetAsParentRole(userRoles, currentRole);
+                aList.AddRange(recalledList);
+                checkedRoles.Add(currentRole);
 
+                foreach (UserRole ar in aList)
+                {
+                    if (checkedRoles.Exists(i => i != ar.RoleName))
+                    {
+                        currentRole = ar.RoleName;
+                    }
+                }
 
+            }
 
-            return userRoles;
+            aList = aList.Distinct().ToList();
+            return aList;
+
         }
 
+        private List<UserRole> GetAsParentRole(List<UserRole> userRole, string currentRole)
+        {
+            
+           List<UserRole> listRoles = new List<UserRole>();
+
+            foreach (UserRole aRole in userRole)
+            {
+                if (aRole.ParentRoleName == currentRole)
+                {
+                    listRoles.Add(aRole);
+                }
+            }
+
+            return listRoles;
+        }
         // GET api/<controller>/5
         public string Get(int id)
         {
