@@ -189,6 +189,7 @@
     <Compile Include="Libs\IOFileOperation.cs" />
     <Compile Include="Libs\Mailer.cs" />
     <Compile Include="Libs\SessionHandler.cs" />
+    <Compile Include="Libs\UserRoleManager.cs" />
     <Compile Include="Libs\UtilityLibrary.cs" />
     <Compile Include="Libs\ZipFiles.cs" />
     <Compile Include="Models\Account\Account.cs" />
@@ -199,7 +200,6 @@
     <Compile Include="Models\Thanas.cs" />
     <Compile Include="Models\TikaStatusChangeInfo.cs" />
     <Compile Include="Models\UserInfo.cs" />
-    <Compile Include="Models\UserRole.cs" />
     <Compile Include="Models\Vaccin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Classes\MenuItems.cs" />

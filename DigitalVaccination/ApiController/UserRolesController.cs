@@ -63,82 +63,19 @@ namespace DigitalVaccination.ApiController
             //return aList;
 
 
+            UserRoleManager roleManager = new UserRoleManager();
+            List<UserRole> userRolesFinal = roleManager.GetRoleLevels(userRoles, roleID);
 
-            List<UserRole> userRolesFinal = GetRoleLevels(userRoles);
 
-
-            int userLevel = userRolesFinal.Where(c => c.Id == roleID).First().Level;
-
-            List<UserRole> removeRoles = userRolesFinal.Where(s => s.Level < userLevel).ToList();
-   
-            foreach (UserRole aRemovableRole in removeRoles)
-            {
-                userRolesFinal.Remove(aRemovableRole);
-            }
+         
 
             return userRolesFinal;
-
-
-
-
-
-
 
 
         }
 
 
-        private List<UserRole> GetRoleLevels(List<UserRole> userRoles)
-        {
-
-
-            List<UserRole> userRolesFinal =
-                userRoles.Where(c => c.ParentRoleName == c.RoleName).ToList().Select(c =>
-                {
-                    c.Level = 0;
-                    return c;
-                }
-                ).ToList();
-
-            bool continueParse = true;
-            List<UserRole> tempList = userRolesFinal;
-            int j = 1;
-            while (continueParse)
-            {
-                List<UserRole> childListLevel = new List<UserRole>();
-                foreach (UserRole aRole in tempList)
-                {
-                    List<UserRole> childList = userRoles.Where(c => c.ParentRoleName == aRole.RoleName && c.RoleName != "SuperAdmin").ToList();
-                    childList = childList.Select(c =>
-                    {
-                        c.Level = j;
-                        return c;
-                    }).ToList();
-                    if (childList.Count > 0)
-                    {
-                        childListLevel.AddRange(childList);
-                    }
-                }
-                if (childListLevel.Count > 0)
-                {
-                    // userRolesFinal.AddRange(childListLevel);
-                    userRolesFinal = userRolesFinal.Concat(childListLevel).ToList();
-                    tempList.Clear();
-                    tempList.AddRange(childListLevel);
-                    childListLevel.Clear();
-                    j++;
-                }
-                else
-                {
-                    continueParse = false;
-                }
-
-
-
-            }
-
-            return userRolesFinal;
-        }
+       
 
         private List<UserRole> GetAsParentRole(List<UserRole> userRole, string currentRole)
         {
