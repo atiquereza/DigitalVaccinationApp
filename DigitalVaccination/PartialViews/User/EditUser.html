@@ -20,9 +20,12 @@
         <label for="UserRole">
             User Role :
         </label>
-        <select class="form-control" id="Roles" ng-selected="{{c.RoleID}}" ng-model=" RoleID" ng-options="c.Id as c.RoleName for c in roles">
+        <select class="form-control" id="Roles" ng-selected="{{c.Id == RoleID}}" ng-model="RoleID" ng-options="c.Id as c.RoleName for c in roles">
             <option value="">-- Select Role --</option>
         </select>
+
+
+       
     </div>
 
 

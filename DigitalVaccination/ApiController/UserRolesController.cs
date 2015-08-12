@@ -18,53 +18,25 @@ namespace DigitalVaccination.ApiController
         // GET api/<controller>
         public List<UserRole> Get()
         {
-            List<UserRole> userRoles = new List<UserRole>();
+            UserRoleManager roleManager = new UserRoleManager();
+            int roleId  =roleManager.GetRoleID();
 
-            HttpSessionStateBase Session = (HttpSessionStateBase)HttpContext.Current.Session["SessionBackup"];
-            Dictionary<string, string> sessionDataDictionary = SessionHandler.GetSessionData(Session);
-            int roleID = Convert.ToInt32(sessionDataDictionary["UserRoleId"]);
-            string query = "select * from roles;";
-            DataSet aDataSet = aGateway.Select(query);
-
-            foreach (DataRow dataRow in aDataSet.Tables[0].Rows)
-            {
-                UserRole aUserRole = new UserRole();
-                aUserRole.Id = Convert.ToInt32(dataRow["ID"].ToString());
-                aUserRole.RoleName = dataRow["RoleName"].ToString();
-                aUserRole.ParentRoleName = dataRow["ParentRoleName"].ToString();
-                userRoles.Add(aUserRole);
-            }
-
-            string currentRole = userRoles.Find(i => i.Id == roleID).RoleName;
-
-            List<UserRole> aList = new List<UserRole>();
-
-
-           
             
-            //List<string> checkedRoles = new List<string>();
-            //foreach (UserRole aUserRole in userRoles)
+            //string query = "select * from roles;";
+            //DataSet aDataSet = aGateway.Select(query);
+            //List<UserRole> userRoles = new List<UserRole>();
+            //foreach (DataRow dataRow in aDataSet.Tables[0].Rows)
             //{
-            //    List<UserRole> recalledList = GetAsParentRole(userRoles, currentRole);
-            //    aList.AddRange(recalledList);
-            //    checkedRoles.Add(currentRole);
-
-            //    foreach (UserRole ar in aList)
-            //    {
-            //        if (checkedRoles.Exists(i => i != ar.RoleName))
-            //        {
-            //            currentRole = ar.RoleName;
-            //        }
-            //    }
-
+            //    UserRole aUserRole = new UserRole();
+            //    aUserRole.Id = Convert.ToInt32(dataRow["ID"].ToString());
+            //    aUserRole.RoleName = dataRow["RoleName"].ToString();
+            //    aUserRole.ParentRoleName = dataRow["ParentRoleName"].ToString();
+            //    userRoles.Add(aUserRole);
             //}
 
-            //aList = aList.Distinct().ToList();
-            //return aList;
+            
 
-
-            UserRoleManager roleManager = new UserRoleManager();
-            List<UserRole> userRolesFinal = roleManager.GetRoleLevels(userRoles, roleID);
+            List<UserRole> userRolesFinal = roleManager.GetRoleLevels(roleId);
 
 
          

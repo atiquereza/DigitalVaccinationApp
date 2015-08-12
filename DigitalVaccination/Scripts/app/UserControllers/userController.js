@@ -206,7 +206,9 @@ UserControllers.controller("EditUserController", ['$scope', '$filter', '$http', 
                 $scope.PermanentAddress = data.PermanentAddress;
                 $scope.BirthCertificateID = data.BirthCertificateID;
                 $scope.UserId = data.UserId;
+                $scope.RoleID = data.UserRole;
 
+                console.log($scope.UserSpecificRoleId);
                 if ($scope.ID) {
                     $scope.title = "Edit User";
                 } else {

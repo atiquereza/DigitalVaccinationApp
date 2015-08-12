@@ -22,6 +22,7 @@ namespace DigitalVaccination.Models
         public string PermanentAddress { get; set; }
         public string BirthCertificateID { get; set; }
         public virtual ICollection<ChildInfo> Childs { get; set; }
+        public int UserRole { set; get; }
 
     }
 }

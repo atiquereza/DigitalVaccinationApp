@@ -64,8 +64,9 @@ namespace DigitalVaccination.ApiController
         public UserInfo Get(int id)
         {
             string query = "select * from userinfo where id=@id;";
+            string query1 = "select userinfo.ID,userinfo.UserID,userinfo.UserName,userinfo.FullName,userinfo.FatherName,userinfo.MotherName,userinfo.CellNumber,userinfo.BirthDay,userinfo.CurrentAddress,userinfo.PermanentAddress,userinfo.BirthCertificateID,users.UserRoleId from userinfo,users where userinfo.id=@id and users.ID=userInfo.UserId;";
             Hashtable aTable = new Hashtable() { { "id", id } };
-            DataSet aSet = aGateway.Select(query, aTable);
+            DataSet aSet = aGateway.Select(query1, aTable);
 
             List<UserInfo> userInfos = new List<UserInfo>();
             UserInfo aUserInfo = new UserInfo();
@@ -83,6 +84,7 @@ namespace DigitalVaccination.ApiController
                 aUserInfo.CurrentAddress = dataRow["CurrentAddress"].ToString();
                 aUserInfo.PermanentAddress = dataRow["PermanentAddress"].ToString();
                 aUserInfo.BirthCertificateID = dataRow["BirthCertificateID"].ToString();
+                aUserInfo.UserRole = Convert.ToInt32(dataRow["UserRoleId"].ToString());
 
             }
 
@@ -157,11 +159,13 @@ namespace DigitalVaccination.ApiController
                 }
                 else
                 {
-                    string query =
-                        "INSERT INTO `tikaappdb`.`userinfo` (`UserID`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES (@UserID, @UserName, @FullName, @FatherName, @MotherName, @CellNumber, @BirthDay, @CurrentAddress, @PermanentAddress, @BirthCertificateID);";
+
+                    string usersQuery = "insert into users(UserName,UserCellNumber,UserRoleId) values (@UserName,@CellNumber,"+aUser.UserRole+") ";
+                    string userInfoQuery =
+                        "INSERT INTO `tikaappdb`.`userinfo` (`UserId`, `UserName`, `FullName`, `FatherName`, `MotherName`, `CellNumber`, `BirthDay`, `CurrentAddress`, `PermanentAddress`, `BirthCertificateID`) VALUES ((select ID from users where UserName='" + aUser.UserName + "'), @UserName, @FullName, @FatherName, @MotherName, @CellNumber, @BirthDay, @CurrentAddress, @PermanentAddress, @BirthCertificateID);";
                     Hashtable aHashtable = new Hashtable();
                     aHashtable.Add("id", aUser.Id);
-                    aHashtable.Add("UserID", 101);
+                  // aHashtable.Add("UserID", 101);
                     aHashtable.Add("UserName", aUser.UserName);
                     aHashtable.Add("FullName", aUser.FullName);
                     aHashtable.Add("FatherName", aUser.FatherName);
@@ -173,7 +177,10 @@ namespace DigitalVaccination.ApiController
                     aHashtable.Add("BirthCertificateID", aUser.BirthCertificateID);
 
 
-                    aGateway.Insert(query, aHashtable);
+
+                    aGateway.Insert(usersQuery, aHashtable);
+
+                    aGateway.Insert(userInfoQuery, aHashtable);
 
                     HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, aUser);
                     return response;

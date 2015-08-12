@@ -33,8 +33,26 @@ namespace DigitalVaccination.ApiController
             // search = textInfo.ToTitleCase(search);
             // Determine the number of records to skip
             int skip = (pageNo - 1) * pageSize;
+            UserRoleManager aRoleManager=new UserRoleManager();
+            int roleId=aRoleManager.GetRoleID();
+            List<UserRole> rolesList=new List<UserRole>();
+            rolesList=aRoleManager.GetRoleLevels(roleId);
+            string inClause =string.Empty;
+            int i =1;
+            int j = rolesList.Count;
+            foreach (UserRole aRole in rolesList)
+            {
+                if (i < j)
+                {
+                    inClause += aRole.Id + ",";
+                }
+                else { inClause += aRole.Id; }
+                i++;
+            }
+
             string query = "SELECT * FROM `userInfo` LIMIT 1000;";
-            DataSet aSet = aGateway.Select(query);
+            string query1 = "select * from userInfo where userID in (select id from users where userroleid in ("+inClause+"))";
+            DataSet aSet = aGateway.Select(query1);
             //IQueryable<Customer> queryable;
             List<UserInfo> aUsersList = new List<UserInfo>();
             //UserInfo aUserInfo = new UserInfo();
