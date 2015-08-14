@@ -58,6 +58,19 @@
 
 
     @RenderSection("JavaScriptAndCSS", required: false)
+
+    @{
+        Dictionary<string, string> sessionDictionary = new Dictionary<string, string>();
+        if (Session != null && Session.Count != 0)
+        {
+            sessionDictionary = SessionHandler.GetSessionData(Session);
+        }
+        else
+        {
+            sessionDictionary.Add("LoggedIn","");
+           
+        }
+    }
 </head>
 <body id="Container">
 
@@ -88,7 +101,7 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong>John Smith</strong>
+                                            <strong>@sessionDictionary["LoggedIn"]</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -104,7 +117,7 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong>John Smith</strong>
+                                            <strong>@sessionDictionary["LoggedIn"]</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -120,7 +133,7 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong>John Smith</strong>
+                                            <strong>@sessionDictionary["LoggedIn"]</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -161,7 +174,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @sessionDictionary["LoggedIn"] <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
