@@ -41,7 +41,7 @@ namespace DigitalVaccination.Controllers
                     return RedirectToAction("Index", "Home");
                 }
 
-                return LogIn("Log In Failed, Invalid combination of User Name and Password");
+                return View("LogIn");
             }
             catch(Exception ex)
             {

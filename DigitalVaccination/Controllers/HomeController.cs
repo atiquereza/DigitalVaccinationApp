@@ -33,11 +33,5 @@ namespace DigitalVaccination.Controllers
             return RedirectToAction("Index", "Account");
 
         }
-
-        public ActionResult ShowUser()
-        {
-            return View();
-        }
-
     }
 }
